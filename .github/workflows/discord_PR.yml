@@ -1,0 +1,15 @@
+name: Pull Request Discord Message
+on: [pull_request]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Pull Request Discord Message
+      uses: appleboy/discord-action@master
+      with:
+        webhook_id: ${{ secrets.WEBHOOK_ID }}
+        webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+        args: A new Pull Request was made. Check it out https://github.com/kaszim/agi-project-2/pull/${{ github.event.pull_request.number }}
