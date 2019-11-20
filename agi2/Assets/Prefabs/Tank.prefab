@@ -630,8 +630,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5, y: 5, z: 5}
+  m_Center: {x: 0, y: 2, z: 0.5}
 --- !u!54 &-4496887601337125783
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -658,10 +658,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f97338da77aa6414a8d34eaf9cb3ffaa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxWheelSpeed: 0
-  wheelDist: 0
+  m_Name:
+  m_EditorClassIdentifier:
+  maxWheelSpeed: 5
+  wheelDist: 4.4
+  slider: {fileID: 0}
+  epsilon: 0.1
+  bullet: {fileID: 1085274913015166348, guid: 6a4df11640aca42fca5184deb0ed1465, type: 3}
+  bulletSpeed: 10
+  bulletOrigin: {x: 0, y: 2.81, z: 8}
 --- !u!1 &8100079727051548339
 GameObject:
   m_ObjectHideFlags: 0
