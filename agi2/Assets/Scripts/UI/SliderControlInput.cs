@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class SliderControlInput : MonoBehaviour
@@ -10,6 +13,8 @@ public class SliderControlInput : MonoBehaviour
     [SerializeField]
     WheelControlSlider _rightSlider = null;
     [SerializeField]
+    ShootButton _shootButton = null;
+    [SerializeField]
     [Tooltip("Controls the maximum distance at which the slider will return to its default value.")]
     float _maxReturnDelta = 0.2f;
     [SerializeField]
@@ -18,7 +23,11 @@ public class SliderControlInput : MonoBehaviour
 
     /// Returns the current input values in the range [-1, 1].
     public Vector2 CurrentInputValues { get; private set; }
+    public EventTrigger OnShootButtonClick { get; private set; }
 
+    /// Event which triggers when the shoot-button is clicked
+    public UnityEvent OnShootClick => _shootButton.OnShootClick;
+    
     void Update()
     {
         if (_leftSlider != null && _rightSlider != null)

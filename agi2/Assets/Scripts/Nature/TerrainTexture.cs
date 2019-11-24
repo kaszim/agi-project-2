@@ -35,7 +35,7 @@ public class TerrainTexture : MonoBehaviour
         if (_startMask == null)
         {
             _maskDimensions = new Vector2Int(_maskPixelsX, Mathf.RoundToInt(_maskPixelsX * transform.localScale.z / transform.localScale.x));
-            _textureMask = new Texture2D(_maskDimensions.x, _maskDimensions.y, TextureFormat.R16, false);
+            _textureMask = new Texture2D(_maskDimensions.x, _maskDimensions.y);
             // Set all mask pixels to white (grass)
             for (int i = 0; i < _maskDimensions.x; i++)
             {
@@ -48,7 +48,7 @@ public class TerrainTexture : MonoBehaviour
         else
         {
             _maskDimensions = new Vector2Int(_startMask.width, _startMask.height);
-            _textureMask = new Texture2D(_maskDimensions.x, _maskDimensions.y, TextureFormat.R16, false);
+            _textureMask = new Texture2D(_maskDimensions.x, _maskDimensions.y);
             var pixels = _startMask.GetPixels();
             _textureMask.SetPixels(pixels);
         }
