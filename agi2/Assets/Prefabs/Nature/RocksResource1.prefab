@@ -8,7 +8,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 376439870947542660}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 3.5
@@ -118,6 +118,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RocksResource1
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 6992b1344217ca04d925c9d42365e873,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9213047771203219156, guid: 6992b1344217ca04d925c9d42365e873,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 748381849206632846, guid: 6992b1344217ca04d925c9d42365e873,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -3183481053865662161, guid: 6992b1344217ca04d925c9d42365e873,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 6992b1344217ca04d925c9d42365e873,
         type: 3}

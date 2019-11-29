@@ -111,6 +111,9 @@ MonoBehaviour:
   _maskPixelsX: 32
   _resourceGainPerGrassPixel: 5
   _startMask: {fileID: 2800000, guid: b60b721b2a2583946b4ab3a2e733dd11, type: 3}
+  _resourceObjectLayer:
+    serializedVersion: 2
+    m_Bits: 1024
 --- !u!114 &7482629313067459003
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -119,6 +119,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: BushResource1
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 75ece93cef98bbe47ac3a3f9a4535911,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782286253476033467, guid: 75ece93cef98bbe47ac3a3f9a4535911,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -4843504212326464950, guid: 75ece93cef98bbe47ac3a3f9a4535911,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 75ece93cef98bbe47ac3a3f9a4535911,
         type: 3}
       propertyPath: m_LocalPosition.x

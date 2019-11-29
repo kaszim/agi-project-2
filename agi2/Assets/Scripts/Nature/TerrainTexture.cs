@@ -13,6 +13,8 @@ public class TerrainTexture : MonoBehaviour
     [Tooltip("Optional start mask. Overrides Mask Pixels X. Make sure that the texture dimensions match the board scale.")]
     Texture2D _startMask = null;
     Texture2D _textureMask = null;
+    [SerializeField]
+    LayerMask _resourceObjectLayer = 0;
 
     Vector2Int _maskDimensions;
     float _maskPixelsPerWorldUnit;
@@ -73,12 +75,12 @@ public class TerrainTexture : MonoBehaviour
         _textureMask.Apply();
     }
 
-    /// Consume resources (including grass and resource objects) in the specified spherical area (in world-space). 
+    /// Consume resources (including grass and resource objects) in the specified spherical area (in world-space).
     /// Return the resource gain from consuming these resources.
     public float ConsumeResourcesWorldSpace(Vector3 center, float radius)
     {
         // Consume resource objects (TODO: use a separate physics layer for resources?)
-        int nResourceObjects = Physics.OverlapSphereNonAlloc(center, radius, physicsCache);
+        int nResourceObjects = Physics.OverlapSphereNonAlloc(center, radius, physicsCache, _resourceObjectLayer);
         float resourceGain = 0;
         for (int i = 0; i < nResourceObjects; i++)
         {
