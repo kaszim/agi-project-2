@@ -91,4 +91,8 @@ public class tankMovement : MonoBehaviour {
     {
         ammo = ammoLimit;
     }
+
+    public void TakeDamage() {
+        //TODO take damage
+    }
 }

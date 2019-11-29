@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8177062123176443168}
   - component: {fileID: 8860838913513667449}
   - component: {fileID: 1033867555064909847}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 2267877254872248798}
   - component: {fileID: 4142749263093542182}
   - component: {fileID: 2061369386759207689}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.063
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 7717728587277802915}
   - component: {fileID: 4429389547612809739}
   - component: {fileID: 8190400961114748379}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.050
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 3254508162546689250}
   - component: {fileID: 2818434489961438367}
   - component: {fileID: 7632904652570763891}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 2256449040576450823}
   - component: {fileID: 8538983001854695702}
   - component: {fileID: 4535774206148482042}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 1467639140881722275}
   - component: {fileID: 8185979013444373537}
   - component: {fileID: 3301066850776629220}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.000
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 2580902128687078282}
   - component: {fileID: 2672004653133311664}
   - component: {fileID: 5759463340251998251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.057
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -783,7 +783,7 @@ GameObject:
   - component: {fileID: 7582658773683175197}
   - component: {fileID: 3537893204072379078}
   - component: {fileID: 4930484672055977035}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -893,7 +893,7 @@ GameObject:
   - component: {fileID: 1284768744798138627}
   - component: {fileID: 1690615858462832234}
   - component: {fileID: 910371515955985858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.046
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1003,7 @@ GameObject:
   - component: {fileID: 5965045417553613011}
   - component: {fileID: 4549141014269564319}
   - component: {fileID: 1526395333309470803}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.041
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1113,7 +1113,7 @@ GameObject:
   - component: {fileID: 8716842996294072752}
   - component: {fileID: 7268927522260884478}
   - component: {fileID: 8650373609806088745}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1223,7 +1223,7 @@ GameObject:
   - component: {fileID: 3836935984410965643}
   - component: {fileID: 8611628830335701579}
   - component: {fileID: 4685508806573202654}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.056
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1333,7 +1333,7 @@ GameObject:
   - component: {fileID: 3606266759971170291}
   - component: {fileID: 3621391811434608233}
   - component: {fileID: 3309694879259827594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 2701339697105814334}
   - component: {fileID: 4536061203835613866}
   - component: {fileID: 4177409873332676317}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.062
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1553,7 +1553,7 @@ GameObject:
   - component: {fileID: 8153705174975150902}
   - component: {fileID: 6473889046277567773}
   - component: {fileID: 6966402565396472184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1663,7 +1663,7 @@ GameObject:
   - component: {fileID: 2151378701065686363}
   - component: {fileID: 8680833752116369949}
   - component: {fileID: 7969282189709398943}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1773,7 +1773,7 @@ GameObject:
   - component: {fileID: 876200225477250711}
   - component: {fileID: 7357044245199346405}
   - component: {fileID: 5161632143862890246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1883,7 +1883,7 @@ GameObject:
   - component: {fileID: 4670880823315694736}
   - component: {fileID: 7930387203656462428}
   - component: {fileID: 838455773250358009}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1993,7 +1993,7 @@ GameObject:
   - component: {fileID: 511808524212750967}
   - component: {fileID: 3548092931329892381}
   - component: {fileID: 2694369721067250747}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.061
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2103,7 +2103,7 @@ GameObject:
   - component: {fileID: 5813871631564432092}
   - component: {fileID: 4719690769236928980}
   - component: {fileID: 472875053236573245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2213,7 +2213,7 @@ GameObject:
   - component: {fileID: 4147175045985409123}
   - component: {fileID: 8864059496649843838}
   - component: {fileID: 8711961278893610101}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2323,7 +2323,7 @@ GameObject:
   - component: {fileID: 5717167078174732784}
   - component: {fileID: 1138175252040037842}
   - component: {fileID: 78174378793243299}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.049
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2431,7 +2431,7 @@ GameObject:
   - component: {fileID: 164999597114333430}
   m_Layer: 0
   m_Name: Destructable_Tower_2
-  m_TagString: Untagged
+  m_TagString: Destructable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2520,7 +2520,7 @@ GameObject:
   - component: {fileID: 102026689487251016}
   - component: {fileID: 608722654519175986}
   - component: {fileID: 7809283785403473335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.052
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2630,7 +2630,7 @@ GameObject:
   - component: {fileID: 6426637870864183059}
   - component: {fileID: 578352294790490848}
   - component: {fileID: 6457932115503535938}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2740,7 +2740,7 @@ GameObject:
   - component: {fileID: 7534743641297197176}
   - component: {fileID: 2059006388680286886}
   - component: {fileID: 8437909431971664952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2850,7 +2850,7 @@ GameObject:
   - component: {fileID: 8554308821350386329}
   - component: {fileID: 2305097461915071116}
   - component: {fileID: 2062255770137719482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.058
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2960,7 +2960,7 @@ GameObject:
   - component: {fileID: 8534176035384722913}
   - component: {fileID: 6795904095173987050}
   - component: {fileID: 4359645360291451666}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.055
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3070,7 +3070,7 @@ GameObject:
   - component: {fileID: 4549706358570496818}
   - component: {fileID: 6179660230675904500}
   - component: {fileID: 3601218841566124580}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3180,7 +3180,7 @@ GameObject:
   - component: {fileID: 6019678728895644762}
   - component: {fileID: 4496724128325060524}
   - component: {fileID: 8203232582338513363}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3290,7 +3290,7 @@ GameObject:
   - component: {fileID: 8873235770855669043}
   - component: {fileID: 3067813210911312485}
   - component: {fileID: 8039702810397460717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3400,7 +3400,7 @@ GameObject:
   - component: {fileID: 6117577490563070357}
   - component: {fileID: 2506811228289512192}
   - component: {fileID: 2705373773551425076}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.059
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3510,7 +3510,7 @@ GameObject:
   - component: {fileID: 4248389800711128212}
   - component: {fileID: 952683429109842613}
   - component: {fileID: 7318281607837514307}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3620,7 +3620,7 @@ GameObject:
   - component: {fileID: 3571369639728489463}
   - component: {fileID: 2113709325287411150}
   - component: {fileID: 1470507979319547967}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3730,7 +3730,7 @@ GameObject:
   - component: {fileID: 5668746161770029774}
   - component: {fileID: 1964194042226819350}
   - component: {fileID: 1428737341480492799}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.054
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3840,7 +3840,7 @@ GameObject:
   - component: {fileID: 3467021088434202320}
   - component: {fileID: 8127386357207359084}
   - component: {fileID: 965873255402242717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3950,7 +3950,7 @@ GameObject:
   - component: {fileID: 2714913524610877987}
   - component: {fileID: 7904855982931392382}
   - component: {fileID: 4561319742131937603}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4060,7 +4060,7 @@ GameObject:
   - component: {fileID: 6325308905509597483}
   - component: {fileID: 1187889678234655410}
   - component: {fileID: 4492087257969793883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4170,7 +4170,7 @@ GameObject:
   - component: {fileID: 198268439306503725}
   - component: {fileID: 1417594777126576962}
   - component: {fileID: 2298954292451119502}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4280,7 +4280,7 @@ GameObject:
   - component: {fileID: 4242384680362669574}
   - component: {fileID: 6346006552790902035}
   - component: {fileID: 603337082519764522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.045
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4390,7 +4390,7 @@ GameObject:
   - component: {fileID: 3033775353565527899}
   - component: {fileID: 9019723153049322107}
   - component: {fileID: 3589151628915876424}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4500,7 +4500,7 @@ GameObject:
   - component: {fileID: 1209579401181046648}
   - component: {fileID: 8715628763030132082}
   - component: {fileID: 536055559006663150}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.048
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4610,7 +4610,7 @@ GameObject:
   - component: {fileID: 7141639586480084717}
   - component: {fileID: 8076727242484361945}
   - component: {fileID: 6681269271001278625}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.051
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4720,7 +4720,7 @@ GameObject:
   - component: {fileID: 1532362848418804801}
   - component: {fileID: 8168899882330327189}
   - component: {fileID: 5010023133461589383}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4830,7 +4830,7 @@ GameObject:
   - component: {fileID: 4340749613385919679}
   - component: {fileID: 7550285696103390972}
   - component: {fileID: 1898763108073813749}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.060
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4940,7 +4940,7 @@ GameObject:
   - component: {fileID: 3525784683758932995}
   - component: {fileID: 1970947623022506903}
   - component: {fileID: 868705107549918016}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.043
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5050,7 +5050,7 @@ GameObject:
   - component: {fileID: 1453282900560812390}
   - component: {fileID: 873543509336153693}
   - component: {fileID: 2592300362155321786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5160,7 +5160,7 @@ GameObject:
   - component: {fileID: 5298706828425469823}
   - component: {fileID: 2823544142604505372}
   - component: {fileID: 8516084391443714677}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.053
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5270,7 +5270,7 @@ GameObject:
   - component: {fileID: 7004284320894960257}
   - component: {fileID: 3886303641881437816}
   - component: {fileID: 124237891405276740}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5380,7 +5380,7 @@ GameObject:
   - component: {fileID: 1687433563117592289}
   - component: {fileID: 1175473049767184631}
   - component: {fileID: 7656401079474621766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5490,7 +5490,7 @@ GameObject:
   - component: {fileID: 8520960126010575664}
   - component: {fileID: 6734010201756826309}
   - component: {fileID: 5088191682202538208}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.042
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5600,7 +5600,7 @@ GameObject:
   - component: {fileID: 8653209677863675116}
   - component: {fileID: 2581385263070772430}
   - component: {fileID: 5705742139224466612}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.047
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5710,7 +5710,7 @@ GameObject:
   - component: {fileID: 8287761108998725794}
   - component: {fileID: 2844593895093028872}
   - component: {fileID: 4155440460879962892}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5820,7 +5820,7 @@ GameObject:
   - component: {fileID: 5079003262018344513}
   - component: {fileID: 6610434335896398838}
   - component: {fileID: 2581916191708711213}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5930,7 +5930,7 @@ GameObject:
   - component: {fileID: 8204023238025017411}
   - component: {fileID: 8832147870727224125}
   - component: {fileID: 6671340150184896917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6040,7 +6040,7 @@ GameObject:
   - component: {fileID: 5769312065529443582}
   - component: {fileID: 4705394232108879546}
   - component: {fileID: 2945918670698411979}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6150,7 +6150,7 @@ GameObject:
   - component: {fileID: 3658661682457759293}
   - component: {fileID: 2069156123011654157}
   - component: {fileID: 1047910909230899561}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.044
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6260,7 +6260,7 @@ GameObject:
   - component: {fileID: 3396696994006965834}
   - component: {fileID: 8697623831290231195}
   - component: {fileID: 298466644322327211}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower_Low_Destructable.038
   m_TagString: Untagged
   m_Icon: {fileID: 0}

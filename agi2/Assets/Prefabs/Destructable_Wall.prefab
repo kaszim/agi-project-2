@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5806041591796449352}
   - component: {fileID: 3982732175413741830}
   - component: {fileID: 3982732175413741831}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.022
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 6723947952356699207}
   - component: {fileID: 3982732175413741838}
   - component: {fileID: 3982732175413741839}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.018
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 739560643236431648}
   - component: {fileID: 3982732175413743240}
   - component: {fileID: 3982732175413743241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.079
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -343,7 +343,7 @@ GameObject:
   - component: {fileID: 6316214375292787111}
   - component: {fileID: 3982732175413743244}
   - component: {fileID: 3982732175413743245}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.081
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 3339407289779093497}
   - component: {fileID: 3982732175413741852}
   - component: {fileID: 3982732175413741853}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.025
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -563,7 +563,7 @@ GameObject:
   - component: {fileID: 7210965066207930}
   - component: {fileID: 3982732175413741858}
   - component: {fileID: 3982732175413741859}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.036
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +673,7 @@ GameObject:
   - component: {fileID: 6819256034929636262}
   - component: {fileID: 3982732175413741848}
   - component: {fileID: 3982732175413741849}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.023
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -783,7 +783,7 @@ GameObject:
   - component: {fileID: 4921031706306686190}
   - component: {fileID: 3982732175413743252}
   - component: {fileID: 3982732175413743253}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.093
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -893,7 +893,7 @@ GameObject:
   - component: {fileID: 2763078518831706620}
   - component: {fileID: 3982732175413741846}
   - component: {fileID: 3982732175413741847}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1003,7 +1003,7 @@ GameObject:
   - component: {fileID: 1761233076629327624}
   - component: {fileID: 3982732175413741910}
   - component: {fileID: 3982732175413741911}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.062
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1113,7 +1113,7 @@ GameObject:
   - component: {fileID: 1516425479941600436}
   - component: {fileID: 3982732175413741896}
   - component: {fileID: 3982732175413741897}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.047
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1223,7 +1223,7 @@ GameObject:
   - component: {fileID: 4213354824774083935}
   - component: {fileID: 3982732175413743272}
   - component: {fileID: 3982732175413743273}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.095
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1333,7 +1333,7 @@ GameObject:
   - component: {fileID: 7258581612487081252}
   - component: {fileID: 3982732175413741870}
   - component: {fileID: 3982732175413741871}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 9019385823407007819}
   - component: {fileID: 3982732175413741886}
   - component: {fileID: 3982732175413741887}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.042
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1553,7 +1553,7 @@ GameObject:
   - component: {fileID: 6578075315666469957}
   - component: {fileID: 3982732175413741922}
   - component: {fileID: 3982732175413741923}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.068
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1663,7 +1663,7 @@ GameObject:
   - component: {fileID: 5296307865135493729}
   - component: {fileID: 3982732175413741854}
   - component: {fileID: 3982732175413741855}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.026
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1773,7 +1773,7 @@ GameObject:
   - component: {fileID: 1480554941637832005}
   - component: {fileID: 3982732175413742076}
   - component: {fileID: 3982732175413742077}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1883,7 +1883,7 @@ GameObject:
   - component: {fileID: 5075572955292616163}
   - component: {fileID: 3982732175413742050}
   - component: {fileID: 3982732175413742051}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1993,7 +1993,7 @@ GameObject:
   - component: {fileID: 3962567463200852274}
   - component: {fileID: 3982732175413741878}
   - component: {fileID: 3982732175413741879}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.046
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2103,7 +2103,7 @@ GameObject:
   - component: {fileID: 2470902474588843494}
   - component: {fileID: 3982732175413741892}
   - component: {fileID: 3982732175413741893}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.053
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2213,7 +2213,7 @@ GameObject:
   - component: {fileID: 1291127564634983686}
   - component: {fileID: 3982732175413741856}
   - component: {fileID: 3982732175413741857}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2323,7 +2323,7 @@ GameObject:
   - component: {fileID: 3086909901123766354}
   - component: {fileID: 3982732175413741946}
   - component: {fileID: 3982732175413741947}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.072
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2433,7 +2433,7 @@ GameObject:
   - component: {fileID: 3002786448421115627}
   - component: {fileID: 3982732175413741844}
   - component: {fileID: 3982732175413741845}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2543,7 +2543,7 @@ GameObject:
   - component: {fileID: 2181385160816623119}
   - component: {fileID: 3982732175413741842}
   - component: {fileID: 3982732175413741843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2653,7 +2653,7 @@ GameObject:
   - component: {fileID: 757312536342576867}
   - component: {fileID: 3982732175413743242}
   - component: {fileID: 3982732175413743243}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.080
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2763,7 +2763,7 @@ GameObject:
   - component: {fileID: 5612205186110038504}
   - component: {fileID: 3982732175413743254}
   - component: {fileID: 3982732175413743255}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.094
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2873,7 +2873,7 @@ GameObject:
   - component: {fileID: 4856526234611461493}
   - component: {fileID: 3982732175413741894}
   - component: {fileID: 3982732175413741895}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.054
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2983,7 +2983,7 @@ GameObject:
   - component: {fileID: 1118582617411643811}
   - component: {fileID: 3982732175413742070}
   - component: {fileID: 3982732175413742071}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3093,7 +3093,7 @@ GameObject:
   - component: {fileID: 3511299525599224665}
   - component: {fileID: 3982732175413741944}
   - component: {fileID: 3982732175413741945}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.071
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3203,7 +3203,7 @@ GameObject:
   - component: {fileID: 564548869836927964}
   - component: {fileID: 3982732175413741860}
   - component: {fileID: 3982732175413741861}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3313,7 +3313,7 @@ GameObject:
   - component: {fileID: 1589094926909764840}
   - component: {fileID: 3982732175413743250}
   - component: {fileID: 3982732175413743251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.092
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3423,7 +3423,7 @@ GameObject:
   - component: {fileID: 1463035754349465357}
   - component: {fileID: 3982732175413741904}
   - component: {fileID: 3982732175413741905}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.059
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3533,7 +3533,7 @@ GameObject:
   - component: {fileID: 1624039381154552065}
   - component: {fileID: 3982732175413741834}
   - component: {fileID: 3982732175413741835}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.016
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3643,7 +3643,7 @@ GameObject:
   - component: {fileID: 8011725658947645970}
   - component: {fileID: 3982732175413742072}
   - component: {fileID: 3982732175413742073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3753,7 +3753,7 @@ GameObject:
   - component: {fileID: 434902843778163729}
   - component: {fileID: 3982732175413741902}
   - component: {fileID: 3982732175413741903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.050
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3863,7 +3863,7 @@ GameObject:
   - component: {fileID: 8109844515309182876}
   - component: {fileID: 3982732175413743236}
   - component: {fileID: 3982732175413743237}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.085
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3973,7 +3973,7 @@ GameObject:
   - component: {fileID: 753801341537596829}
   - component: {fileID: 3982732175413741916}
   - component: {fileID: 3982732175413741917}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.057
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4083,7 +4083,7 @@ GameObject:
   - component: {fileID: 5006868280411278352}
   - component: {fileID: 3982732175413741932}
   - component: {fileID: 3982732175413741933}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.065
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4193,7 +4193,7 @@ GameObject:
   - component: {fileID: 1980830998790197690}
   - component: {fileID: 3982732175413743266}
   - component: {fileID: 3982732175413743267}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.100
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4303,7 +4303,7 @@ GameObject:
   - component: {fileID: 8239924072033871684}
   - component: {fileID: 3982732175413743256}
   - component: {fileID: 3982732175413743257}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.087
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4413,7 +4413,7 @@ GameObject:
   - component: {fileID: 4304287024727077567}
   - component: {fileID: 3982732175413743278}
   - component: {fileID: 3982732175413743279}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.098
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4523,7 +4523,7 @@ GameObject:
   - component: {fileID: 5636980938721041543}
   - component: {fileID: 3982732175413743248}
   - component: {fileID: 3982732175413743249}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.091
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4633,7 +4633,7 @@ GameObject:
   - component: {fileID: 3205807274164518617}
   - component: {fileID: 3982732175413743238}
   - component: {fileID: 3982732175413743239}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.086
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4743,7 +4743,7 @@ GameObject:
   - component: {fileID: 918855467502176774}
   - component: {fileID: 3982732175413742064}
   - component: {fileID: 3982732175413742065}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4853,7 +4853,7 @@ GameObject:
   - component: {fileID: 7567813405977188592}
   - component: {fileID: 3982732175413741888}
   - component: {fileID: 3982732175413741889}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.051
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4963,7 +4963,7 @@ GameObject:
   - component: {fileID: 8325541096213659641}
   - component: {fileID: 3982732175413742062}
   - component: {fileID: 3982732175413742063}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5073,7 +5073,7 @@ GameObject:
   - component: {fileID: 8825057315703273230}
   - component: {fileID: 3982732175413741928}
   - component: {fileID: 3982732175413741929}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.063
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5183,7 +5183,7 @@ GameObject:
   - component: {fileID: 2058208673367203224}
   - component: {fileID: 3982732175413741828}
   - component: {fileID: 3982732175413741829}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.021
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5293,7 +5293,7 @@ GameObject:
   - component: {fileID: 7505181622697305557}
   - component: {fileID: 3982732175413741850}
   - component: {fileID: 3982732175413741851}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.024
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5403,7 +5403,7 @@ GameObject:
   - component: {fileID: 3515253671712096328}
   - component: {fileID: 3982732175413741864}
   - component: {fileID: 3982732175413741865}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5513,7 +5513,7 @@ GameObject:
   - component: {fileID: 8689472791007378959}
   - component: {fileID: 3982732175413743274}
   - component: {fileID: 3982732175413743275}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.096
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5623,7 +5623,7 @@ GameObject:
   - component: {fileID: 2350804645156923922}
   - component: {fileID: 3982732175413743232}
   - component: {fileID: 3982732175413743233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.083
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5733,7 +5733,7 @@ GameObject:
   - component: {fileID: 5022020750251837607}
   - component: {fileID: 3982732175413741862}
   - component: {fileID: 3982732175413741863}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.038
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5843,7 +5843,7 @@ GameObject:
   - component: {fileID: 3152007299391021555}
   - component: {fileID: 3982732175413741900}
   - component: {fileID: 3982732175413741901}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.049
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5953,7 +5953,7 @@ GameObject:
   - component: {fileID: 3674452385262281169}
   - component: {fileID: 3982732175413742060}
   - component: {fileID: 3982732175413742061}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6063,7 +6063,7 @@ GameObject:
   - component: {fileID: 3162956669270224276}
   - component: {fileID: 3982732175413741924}
   - component: {fileID: 3982732175413741925}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.069
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6173,7 +6173,7 @@ GameObject:
   - component: {fileID: 59219249093964682}
   - component: {fileID: 3982732175413741826}
   - component: {fileID: 3982732175413741827}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.020
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6416,7 +6416,7 @@ GameObject:
   - component: {fileID: 1300479897075325756}
   - component: {fileID: 3982732175413741940}
   - component: {fileID: 3982732175413741941}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.077
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6526,7 +6526,7 @@ GameObject:
   - component: {fileID: 3602010042408221148}
   - component: {fileID: 3982732175413741950}
   - component: {fileID: 3982732175413741951}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.074
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6636,7 +6636,7 @@ GameObject:
   - component: {fileID: 1508987552295723344}
   - component: {fileID: 3982732175413741836}
   - component: {fileID: 3982732175413741837}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.017
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6746,7 +6746,7 @@ GameObject:
   - component: {fileID: 8898755405140747931}
   - component: {fileID: 3982732175413741934}
   - component: {fileID: 3982732175413741935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.066
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6856,7 +6856,7 @@ GameObject:
   - component: {fileID: 1489220416301433329}
   - component: {fileID: 3982732175413743264}
   - component: {fileID: 3982732175413743265}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.099
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6966,7 +6966,7 @@ GameObject:
   - component: {fileID: 8715599722712613947}
   - component: {fileID: 3982732175413742074}
   - component: {fileID: 3982732175413742075}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7076,7 +7076,7 @@ GameObject:
   - component: {fileID: 3723757460963264260}
   - component: {fileID: 3982732175413743276}
   - component: {fileID: 3982732175413743277}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.097
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7186,7 +7186,7 @@ GameObject:
   - component: {fileID: 5969649381979378519}
   - component: {fileID: 3982732175413743234}
   - component: {fileID: 3982732175413743235}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.084
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7296,7 +7296,7 @@ GameObject:
   - component: {fileID: 4547367663881581460}
   - component: {fileID: 3982732175413741938}
   - component: {fileID: 3982732175413741939}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.076
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7406,7 +7406,7 @@ GameObject:
   - component: {fileID: 1104608024427347148}
   - component: {fileID: 3982732175413741898}
   - component: {fileID: 3982732175413741899}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.048
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7516,7 +7516,7 @@ GameObject:
   - component: {fileID: 2339419745200786681}
   - component: {fileID: 3982732175413742068}
   - component: {fileID: 3982732175413742069}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7626,7 +7626,7 @@ GameObject:
   - component: {fileID: 8740546822419969827}
   - component: {fileID: 3982732175413741906}
   - component: {fileID: 3982732175413741907}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.060
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7736,7 +7736,7 @@ GameObject:
   - component: {fileID: 1045027753049633037}
   - component: {fileID: 3982732175413741890}
   - component: {fileID: 3982732175413741891}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.052
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7846,7 +7846,7 @@ GameObject:
   - component: {fileID: 6473932676042088962}
   - component: {fileID: 3982732175413741942}
   - component: {fileID: 3982732175413741943}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.078
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7956,7 +7956,7 @@ GameObject:
   - component: {fileID: 7964014817975990948}
   - component: {fileID: 3982732175413742058}
   - component: {fileID: 3982732175413742059}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8066,7 +8066,7 @@ GameObject:
   - component: {fileID: 3767141143554879138}
   - component: {fileID: 3982732175413741876}
   - component: {fileID: 3982732175413741877}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.045
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8176,7 +8176,7 @@ GameObject:
   - component: {fileID: 1874012030539442525}
   - component: {fileID: 3982732175413741882}
   - component: {fileID: 3982732175413741883}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8286,7 +8286,7 @@ GameObject:
   - component: {fileID: 6104220803234534749}
   - component: {fileID: 3982732175413742066}
   - component: {fileID: 3982732175413742067}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8396,7 +8396,7 @@ GameObject:
   - component: {fileID: 2136706181892435012}
   - component: {fileID: 3982732175413741866}
   - component: {fileID: 3982732175413741867}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.032
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8506,7 +8506,7 @@ GameObject:
   - component: {fileID: 2743125108572213156}
   - component: {fileID: 3982732175413743258}
   - component: {fileID: 3982732175413743259}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.088
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8616,7 +8616,7 @@ GameObject:
   - component: {fileID: 3107702512070847960}
   - component: {fileID: 3982732175413741914}
   - component: {fileID: 3982732175413741915}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.056
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8726,7 +8726,7 @@ GameObject:
   - component: {fileID: 5072257434608948192}
   - component: {fileID: 3982732175413741824}
   - component: {fileID: 3982732175413741825}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.019
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8836,7 +8836,7 @@ GameObject:
   - component: {fileID: 7507656544134229488}
   - component: {fileID: 3982732175413741874}
   - component: {fileID: 3982732175413741875}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.044
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8946,7 +8946,7 @@ GameObject:
   - component: {fileID: 7448012905358246760}
   - component: {fileID: 3982732175413741912}
   - component: {fileID: 3982732175413741913}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.055
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9056,7 +9056,7 @@ GameObject:
   - component: {fileID: 4534693722203390050}
   - component: {fileID: 3982732175413741880}
   - component: {fileID: 3982732175413741881}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.039
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9166,7 +9166,7 @@ GameObject:
   - component: {fileID: 9192755553461426079}
   - component: {fileID: 3982732175413743246}
   - component: {fileID: 3982732175413743247}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.082
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9276,7 +9276,7 @@ GameObject:
   - component: {fileID: 6077299474605772962}
   - component: {fileID: 3982732175413741930}
   - component: {fileID: 3982732175413741931}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.064
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9386,7 +9386,7 @@ GameObject:
   - component: {fileID: 7182855638152352678}
   - component: {fileID: 3982732175413743262}
   - component: {fileID: 3982732175413743263}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.090
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9496,7 +9496,7 @@ GameObject:
   - component: {fileID: 5851982138447904734}
   - component: {fileID: 3982732175413741918}
   - component: {fileID: 3982732175413741919}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.058
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9606,7 +9606,7 @@ GameObject:
   - component: {fileID: 4601680725746310044}
   - component: {fileID: 3982732175413741868}
   - component: {fileID: 3982732175413741869}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9716,7 +9716,7 @@ GameObject:
   - component: {fileID: 3803045858890143655}
   - component: {fileID: 3982732175413741840}
   - component: {fileID: 3982732175413741841}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9826,7 +9826,7 @@ GameObject:
   - component: {fileID: 3327448505897692762}
   - component: {fileID: 3982732175413741948}
   - component: {fileID: 3982732175413741949}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.073
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9936,7 +9936,7 @@ GameObject:
   - component: {fileID: 6059147446178761136}
   - component: {fileID: 3982732175413741936}
   - component: {fileID: 3982732175413741937}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.075
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10046,7 +10046,7 @@ GameObject:
   - component: {fileID: 2537549333086970729}
   - component: {fileID: 3982732175413741920}
   - component: {fileID: 3982732175413741921}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.067
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10156,7 +10156,7 @@ GameObject:
   - component: {fileID: 9202602951469757341}
   - component: {fileID: 3982732175413743260}
   - component: {fileID: 3982732175413743261}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.089
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10266,7 +10266,7 @@ GameObject:
   - component: {fileID: 3692083615499963359}
   - component: {fileID: 3982732175413741832}
   - component: {fileID: 3982732175413741833}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10376,7 +10376,7 @@ GameObject:
   - component: {fileID: 999095020721135428}
   - component: {fileID: 3982732175413742078}
   - component: {fileID: 3982732175413742079}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10486,7 +10486,7 @@ GameObject:
   - component: {fileID: 3592580466463571555}
   - component: {fileID: 3982732175413743270}
   - component: {fileID: 3982732175413743271}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.102
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10596,7 +10596,7 @@ GameObject:
   - component: {fileID: 3317777522964349680}
   - component: {fileID: 3982732175413743268}
   - component: {fileID: 3982732175413743269}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.101
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10706,7 +10706,7 @@ GameObject:
   - component: {fileID: 3638167310969483093}
   - component: {fileID: 3982732175413741884}
   - component: {fileID: 3982732175413741885}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.041
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10816,7 +10816,7 @@ GameObject:
   - component: {fileID: 7006722507771745151}
   - component: {fileID: 3982732175413742054}
   - component: {fileID: 3982732175413742055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10926,7 +10926,7 @@ GameObject:
   - component: {fileID: 3476481154838098133}
   - component: {fileID: 3982732175413742048}
   - component: {fileID: 3982732175413742049}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11036,7 +11036,7 @@ GameObject:
   - component: {fileID: 8413591290949928949}
   - component: {fileID: 3982732175413741872}
   - component: {fileID: 3982732175413741873}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.043
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11146,7 +11146,7 @@ GameObject:
   - component: {fileID: 8420912982144884974}
   - component: {fileID: 3982732175413741908}
   - component: {fileID: 3982732175413741909}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.061
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11256,7 +11256,7 @@ GameObject:
   - component: {fileID: 7820599086586540301}
   - component: {fileID: 3982732175413742052}
   - component: {fileID: 3982732175413742053}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11366,7 +11366,7 @@ GameObject:
   - component: {fileID: 8295170296247553666}
   - component: {fileID: 3982732175413741926}
   - component: {fileID: 3982732175413741927}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Wall_Destructible.070
   m_TagString: Untagged
   m_Icon: {fileID: 0}

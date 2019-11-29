@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5339144449677586028}
   - component: {fileID: 3878639292618997349}
   - component: {fileID: 8183754660327871884}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: UpperBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4585150919303362668}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tracks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 8152501032830744128}
   - component: {fileID: 4871046743343848543}
   - component: {fileID: 4267253765272928247}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TrackCover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 3807552139235674285}
   - component: {fileID: 2611602442409379844}
   - component: {fileID: 6067895479931975724}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Track
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 3619718882207554240}
   - component: {fileID: 4057891204876087454}
   - component: {fileID: 3930977113161523603}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 4096208953106817443}
   - component: {fileID: 278890943120151930}
   - component: {fileID: 4757361226153576414}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,7 +438,7 @@ GameObject:
   - component: {fileID: 3860518117256398493}
   - component: {fileID: 5006272355322266945}
   - component: {fileID: 4409537666424748462}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RotationAxle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 7786271546499602278}
   - component: {fileID: 3248788307328925625}
   - component: {fileID: 8246024826107827178}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +596,7 @@ GameObject:
   - component: {fileID: -4496887601337125783}
   - component: {fileID: -5443360492162956355}
   - component: {fileID: -3442252586784801846}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tank
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   - component: {fileID: 3739011898706306826}
   - component: {fileID: 554613016926694336}
   - component: {fileID: 6799303272639096082}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wheels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 1360040738992624203}
   - component: {fileID: 433679566544676986}
   - component: {fileID: 4129746864112203918}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LowerBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}

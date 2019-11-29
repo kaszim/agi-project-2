@@ -8,6 +8,10 @@ public class DestroyMesh : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Explode(transform.position);
+    }
+
+    public void Explode(Vector3 origin) {
         GameObject newObj = Instantiate(destructableObject, this.transform.position, this.transform.rotation);
         newObj.transform.localScale = this.transform.localScale;
         newObj.transform.SetParent(this.transform.parent);
@@ -16,7 +20,7 @@ public class DestroyMesh : MonoBehaviour
         {
             foreach (Rigidbody current in objects)
             {
-                current.AddExplosionForce(1000, this.transform.position, 4);
+                current.AddExplosionForce(1000, origin, 4);
             }
         }
         Destroy(this.gameObject);
