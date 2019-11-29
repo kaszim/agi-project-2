@@ -9,6 +9,8 @@ public class tankMovement : MonoBehaviour {
     [SerializeField] private float turnSpeed = 1;
     [SerializeField] private float epsilon;
 
+    //Tank related
+
     //Bullet related
     [SerializeField] private GameObject bullet;
     [SerializeField] private float bulletSpeed;
@@ -21,6 +23,7 @@ public class tankMovement : MonoBehaviour {
     //Track related
     private GameObject tankTracks;
     private Renderer tankRenderer;
+
 
     NetworkedGameObject networkedGameObject;
     new Rigidbody rigidbody;
