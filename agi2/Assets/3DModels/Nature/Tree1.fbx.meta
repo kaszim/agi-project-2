@@ -12,6 +12,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Shadow
+    second: {fileID: 2100000, guid: 628fb50d4d649b94f818faefe320cc6d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Trunk
     second: {fileID: 2100000, guid: 2904466202858fb4c86e6487544efdd8, type: 2}
   materials:

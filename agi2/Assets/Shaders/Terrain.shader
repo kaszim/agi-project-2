@@ -6,17 +6,18 @@
         _Metallic ("Metallic", Range(0,1)) = 0.0
         _MaskTex ("Mask Texture", 2D) = "white" {}
         _GrassTex ("Grass Texture (RGB)", 2D) = "white" {}
-        _SandTex ("Sand Texture (RGB)", 2D) = "white" {}
         _NoiseTex ("Edge Noise Texture", 2D) = "white" {}
+        _Cutoff ("Alpha cut off", Range(0.01, 1)) = 0.5
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
-        LOD 200
+        Tags { "RenderType"="TransparentCutout" }
+		Tags { "Queue"="AlphaTest+50" }
+		LOD 200
 
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf Standard fullforwardshadows
+        #pragma surface surf Standard alphatest:_Cutoff addshadow
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 3.0
@@ -49,19 +50,17 @@
         {
             fixed4 mask = tex2D (_MaskTex, IN.uv_MaskTex);
             fixed4 grass = tex2D (_GrassTex, IN.uv_GrassTex);
-            fixed4 sand = tex2D (_SandTex, IN.uv_SandTex);
             fixed4 noise = tex2D (_NoiseTex, IN.uv_NoiseTex) * 0.3;
             half noisedMask = saturate(mask.r - noise);
-            // Shade edges of sand
-            fixed3 shadedSand = lerp(sand.rgb, fixed3(0.2, 0, 0), mask.r * mask.r);
             // Shade edges of grass
             half grassShadeStep = step(noisedMask, 0.7);
             fixed3 shadedGrass = lerp(grass.rgb, grass.rgb * 0.3, 1 - mask.r + grassShadeStep * 0.2);
             // Blend sand to grass based on mask texture
             half grassSandStep = step(noisedMask, 0.5);
-            o.Albedo = lerp(shadedGrass, shadedSand, grassSandStep);
+            o.Albedo = shadedGrass;
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
+            o.Alpha = 1-grassSandStep;
         }
         ENDCG
     }
