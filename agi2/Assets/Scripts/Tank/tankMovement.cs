@@ -14,6 +14,10 @@ public class tankMovement : MonoBehaviour {
     [SerializeField] private float bulletSpeed;
     [SerializeField] private Vector3 bulletOrigin;
 
+    //ammo
+    private int ammo;
+    [SerializeField] private int ammoLimit;
+
     //Track related
     private GameObject tankTracks;
     private Renderer tankRenderer;
@@ -60,13 +64,28 @@ public class tankMovement : MonoBehaviour {
         {
             Shoot();
         }
+        if (Input.GetKeyDown(KeyCode.R))    //debug reload
+        {
+            Reload();
+        }
     }
 
     void Shoot()
     {
-        GameObject activeBullet = Instantiate(bullet, transform.TransformPoint(bulletOrigin), Quaternion.identity);
-        activeBullet.GetComponent <Rigidbody>().velocity = transform.forward * bulletSpeed;
-        AudioManager.Instance.Play("tankShoot");
+        if(ammo > 0){
+            GameObject activeBullet = Instantiate(bullet, transform.TransformPoint(bulletOrigin), Quaternion.identity);
+            activeBullet.GetComponent <Rigidbody>().velocity = transform.forward * bulletSpeed;
+            AudioManager.Instance.Play("tankShoot");
+            ammo--;
+        }
+        else
+        {
+            Debug.Log("Out of ammo!");
+        }
     }
 
+    public void Reload()
+    {
+        ammo = ammoLimit;
+    }
 }
