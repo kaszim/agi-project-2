@@ -15,11 +15,19 @@ public class tankMovement : MonoBehaviour {
     [SerializeField] private float bulletSpeed;
     [SerializeField] private Vector3 bulletOrigin;
 
+    //Track related
+    private GameObject tankTracks;
+    private Renderer tankRenderer;
+
     NetworkedGameObject networkedGameObject;
 
     // Start is called before the first frame update
     void Start()
     {
+        string path = this.name;
+        Debug.Log(path + "/Tracks/Track");
+        tankTracks = GameObject.Find(this.name + "/Tracks/Track"); // Hierarcy reference to the tracks.
+        tankRenderer = tankTracks.GetComponent<Renderer>();
         networkedGameObject = GetComponent<NetworkedGameObject>();
         slider.OnShootClick.AddListener(Shoot);
     }
@@ -34,13 +42,30 @@ public class tankMovement : MonoBehaviour {
             this.enabled = false;
             slider.OnShootClick.RemoveListener(Shoot);
         }
-        
+
         //Tankmovement
         Vector2 input = slider.CurrentInputValues;
+        float realX = input.x;
+        float realY = input.y;
         AudioManager.Instance.TankSound(input); //Update tank engine sound
         input *= maxWheelSpeed;
 
-        if (Mathf.Abs(input.x - input.y) < epsilon) {
+        //If the sliders are not in the deadzone 
+        if(Mathf.Abs(realX) >= 0.001F || Mathf.Abs(realY) >= 0.001F)
+        {
+            //Animate the tankTracks by moving the uvs. Negated value needed to simulate correct direction
+            int direction = realX < 0 ? -1 : 1;
+
+            // Prevents the tracks from not animating when sliders are maxed out.
+            float inputSpeed = Mathf.Abs(input.x) > Mathf.Abs(input.y) ? input.x : input.y;
+            if (inputSpeed == maxWheelSpeed || inputSpeed < 0.002) inputSpeed = maxWheelSpeed - 0.01F;
+
+            float offsetTexture = direction * (Mathf.Abs(inputSpeed * 0.4f) % 2F) / 2; // Offset is between 0 and 1
+            tankRenderer.material.mainTextureOffset += new Vector2(offsetTexture * Time.deltaTime, 0);
+        }
+
+        if (Mathf.Abs(input.x - input.y) < epsilon)
+        {
             transform.position += transform.forward * input.x * Time.deltaTime;
         } else {
             float rotationDist = (wheelDist / 2) * (input.x + input.y) / (input.y - input.x);
