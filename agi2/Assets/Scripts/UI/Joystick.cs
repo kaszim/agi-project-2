@@ -64,8 +64,8 @@ public class Joystick : MonoBehaviour, IDragHandler, IPointerDownHandler, IPoint
         Vector3 transformedPosition = compass.transform.InverseTransformPoint(joystickHandle.transform.position) * compass.transform.lossyScale.x;
         InputPosition = new Vector2
         (
-            transformedPosition.x / maxDragDistance,
-            transformedPosition.y / maxDragDistance
+            (transformedPosition.x / maxDragDistance) / transform.lossyScale.x,
+            (transformedPosition.y / maxDragDistance) / transform.lossyScale.y
         );
         InputPositionPolar = new Vector2
         (

@@ -56,9 +56,16 @@ public class tankMovement : MonoBehaviour {
         AudioManager.Instance.TankSound(new Vector2(input.x, input.x)); //Update tank engine sound
         float rotateSign = Mathf.Sign(input.y);
         float rotationSpeed = (1 - Mathf.Abs((input.y) / Mathf.PI)) * 2000 * turnSpeed;
-        float targetY = transform.rotation.eulerAngles.y + rotateSign * Time.deltaTime * input.x * rotationSpeed;
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, targetY, transform.rotation.eulerAngles.z);
-        rigidbody.MovePosition(transform.position + transform.forward * input.x * Time.deltaTime * movementSpeed * transform.localScale.x);
+        float rotationDelta = rotateSign * input.x * rotationSpeed;
+        if (Mathf.Abs(rotationDelta) > 0.01f)
+        {
+            transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y + rotationDelta * Time.deltaTime, 0);
+        }
+        float movementDelta = input.x * movementSpeed * transform.lossyScale.x;
+        if (Mathf.Abs(movementDelta) > 0.01f)
+        {
+            transform.position += transform.forward * movementDelta * Time.deltaTime;
+        }        
         TankInput.Instance.Joystick.UpdateTankRotationIndicator(transform.rotation.eulerAngles.y);
         //Animate the tankTracks by moving the uvs
         var offset = (tankRenderer.material.mainTextureOffset.x + input.x * Time.deltaTime * movementSpeed * 0.05f) % 1f;
@@ -77,7 +84,13 @@ public class tankMovement : MonoBehaviour {
     {
         if(ammo > 0){
             GameObject activeBullet = Instantiate(bullet, transform.TransformPoint(bulletOrigin), Quaternion.identity);
-            activeBullet.GetComponent <Rigidbody>().velocity = transform.forward * bulletSpeed;
+            if (transform.parent != null)
+            {
+                Vector3 tempScale = activeBullet.transform.localScale;
+                activeBullet.transform.SetParent(transform.parent);
+                activeBullet.transform.localScale = Vector3.Scale(tempScale, transform.localScale);
+            }
+            activeBullet.GetComponent <Rigidbody>().velocity = transform.forward * bulletSpeed * transform.lossyScale.x;
             AudioManager.Instance.Play("tankShoot");
             ammo--;
         }

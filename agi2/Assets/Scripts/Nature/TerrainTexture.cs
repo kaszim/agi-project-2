@@ -59,15 +59,15 @@ public class TerrainTexture : MonoBehaviour
 
         // Calculate material properties based on object scale
         var defaultTexScale = _rendererMaterial.GetTextureScale("_GrassTex");
-        var modifiedTexScale = new Vector2(transform.lossyScale.x, transform.lossyScale.z) * defaultTexScale;
+        var modifiedTexScale = new Vector2(transform.lossyScale.x / transform.lossyScale.z, 1) * defaultTexScale;
         _rendererMaterial.SetTextureScale("_GrassTex", modifiedTexScale);
 
         defaultTexScale = _rendererMaterial.GetTextureScale("_SandTex");
-        modifiedTexScale = new Vector2(transform.lossyScale.x, transform.lossyScale.z) * defaultTexScale;
+        modifiedTexScale = new Vector2(transform.lossyScale.x / transform.lossyScale.z, 1) * defaultTexScale;
         _rendererMaterial.SetTextureScale("_SandTex", modifiedTexScale);
 
         defaultTexScale = _rendererMaterial.GetTextureScale("_NoiseTex");
-        modifiedTexScale = new Vector2(transform.lossyScale.x, transform.lossyScale.z) * defaultTexScale;
+        modifiedTexScale = new Vector2(transform.lossyScale.x / transform.lossyScale.z, 1) * defaultTexScale;
         _rendererMaterial.SetTextureScale("_NoiseTex", modifiedTexScale);
 
         _maskPixelsPerWorldUnit = _maskDimensions.x / transform.lossyScale.x / PlaneSize;
