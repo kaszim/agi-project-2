@@ -120,5 +120,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5f70d577fe667458a7f8aa5cd5207c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destructableObject: {fileID: 3751898276052593381, guid: e87aba81894751745aead9606df48f3a,
+  destructableObject: {fileID: 2510691514513717314, guid: 4c7fe871ddf324147bc0b861387caeb7,
     type: 3}

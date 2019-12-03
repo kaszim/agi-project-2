@@ -106,5 +106,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c5f70d577fe667458a7f8aa5cd5207c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destructableObject: {fileID: 4928183573812434710, guid: 27d57c7241b388a47a4aab27e4d0f1b0,
+  destructableObject: {fileID: 7561967701691987966, guid: c5d5d005f9e47e34faccf9326f0b8b90,
     type: 3}
