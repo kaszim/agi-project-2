@@ -15,10 +15,15 @@ public class TerrainMouseInteraction : MonoBehaviour
     TerrainTexture _terrain;
     int _debugPaintCounter = 0;
     float _debugPaintTimer = 0;
+    float _worldScale = 1;
 
-    void Awake()
+    void Start()
     {
         _terrain = GetComponent<TerrainTexture>();
+        if (transform.parent != null)
+        {
+            _worldScale = transform.parent.lossyScale.x;
+        }
     }
 
     void Update()
@@ -33,7 +38,7 @@ public class TerrainMouseInteraction : MonoBehaviour
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit))
                 {
-                    var gain = _terrain.ConsumeResourcesWorldSpace(hit.point, 1f);
+                    var gain = _terrain.ConsumeResourcesWorldSpace(hit.point, 5f * _worldScale, 1);
                     if (_fuelIndicator != null)
                     {
                         _fuelIndicator.localScale = _fuelIndicator.localScale + Vector3.up * gain * 0.01f;

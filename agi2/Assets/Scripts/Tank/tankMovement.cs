@@ -32,7 +32,6 @@ public class tankMovement : MonoBehaviour {
     void Start()
     {
         string path = this.name;
-        Debug.Log(path + "/Tracks/Track");
         tankTracks = GameObject.Find(this.name + "/Tracks/Track"); // Hierarcy reference to the tracks.
         tankRenderer = tankTracks.GetComponent<Renderer>();
         networkedGameObject = GetComponent<NetworkedGameObject>();
@@ -57,16 +56,17 @@ public class tankMovement : MonoBehaviour {
         float rotateSign = Mathf.Sign(input.y);
         float rotationSpeed = (1 - Mathf.Abs((input.y) / Mathf.PI)) * 2000 * turnSpeed;
         float rotationDelta = rotateSign * input.x * rotationSpeed;
-        if (Mathf.Abs(rotationDelta) > 0.01f)
-        {
-            transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y + rotationDelta * Time.deltaTime, 0);
-        }
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y + rotationDelta * Time.deltaTime, 0);
         float movementDelta = input.x * movementSpeed * transform.lossyScale.x;
         if (Mathf.Abs(movementDelta) > 0.01f)
         {
             transform.position += transform.forward * movementDelta * Time.deltaTime;
-        }        
+        }
         TankInput.Instance.Joystick.UpdateTankRotationIndicator(transform.rotation.eulerAngles.y);
+        // Since we currently move the tank by setting the position directly, we can force the velocity to 0 to reduce physics errors in AR.
+        rigidbody.velocity = Vector3.zero;
+        rigidbody.angularVelocity = Vector3.zero;
+
         //Animate the tankTracks by moving the uvs
         var offset = (tankRenderer.material.mainTextureOffset.x + input.x * Time.deltaTime * movementSpeed * 0.05f) % 1f;
         tankRenderer.material.mainTextureOffset = new Vector2(offset, tankRenderer.material.mainTextureOffset.y);

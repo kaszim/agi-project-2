@@ -15,6 +15,7 @@ public class TerrainTexture : MonoBehaviour
     Texture2D _textureMask = null;
     [SerializeField]
     LayerMask _resourceObjectLayer = 0;
+    public float WorldScale { get; private set; } = 1;
 
     Vector2Int _maskDimensions;
     float _maskPixelsPerWorldUnit;
@@ -23,8 +24,6 @@ public class TerrainTexture : MonoBehaviour
 
     /// This script assumes that the terrain renderer is a default unity plane (with default size 10 units) attached to the same GameObject.
     const float PlaneSize = 10;
-    /// Extra margin for the grass fade radius, relative to the resource consumption radius.
-    const float GrassFadeMargin = 1.25f;
 
     /// Cache for sphere checks during resource consumption. Also defines the maximum number of objects to check each frame.
     Collider[] physicsCache = new Collider[20];
@@ -33,6 +32,10 @@ public class TerrainTexture : MonoBehaviour
     {
         _terrainRenderer = GetComponent<MeshRenderer>();
         _rendererMaterial = _terrainRenderer.material;
+        if (transform.parent != null)
+        {
+            WorldScale = transform.parent.lossyScale.x;
+        }
 
         if (_startMask == null)
         {
@@ -77,10 +80,13 @@ public class TerrainTexture : MonoBehaviour
 
     /// Consume resources (including grass and resource objects) in the specified spherical area (in world-space).
     /// Return the resource gain from consuming these resources.
-    public float ConsumeResourcesWorldSpace(Vector3 center, float radius)
+    public float ConsumeResourcesWorldSpace(Vector3 center, float radius, float opacity)
     {
-        // Consume resource objects (TODO: use a separate physics layer for resources?)
-        int nResourceObjects = Physics.OverlapSphereNonAlloc(center, radius, physicsCache, _resourceObjectLayer);
+        if (radius <= Mathf.Epsilon)
+        {
+            return 0;
+        }
+        int nResourceObjects = Physics.OverlapSphereNonAlloc(center, radius * 0.75f, physicsCache, _resourceObjectLayer);
         float resourceGain = 0;
         for (int i = 0; i < nResourceObjects; i++)
         {
@@ -92,20 +98,25 @@ public class TerrainTexture : MonoBehaviour
         }
         // Consume grass
         Vector2Int boardPoint = WorldToTexturePoint(center);
-        int boardRadius = Mathf.RoundToInt(radius * _maskPixelsPerWorldUnit);
-        return resourceGain + FillCirclePixelSpace(boardPoint, boardRadius, 1);
+        float boardRadius = radius * _maskPixelsPerWorldUnit;
+        return resourceGain + FillCirclePixelSpace(boardPoint, boardRadius, opacity);
     }
 
     /// Consume the grass in a pixel-space circle defined by center and radius.
     /// Returns the resource gain from consuming the grass.
-    float FillCirclePixelSpace(Vector2Int center, int radius, float opacity)
+    float FillCirclePixelSpace(Vector2Int center, float radius, float opacity)
     {
-        float resourceGain = 0;
-        // The radius is slightly inflated to make the grass texture better match the resource object consumption
-        float sqrRad = radius * radius * GrassFadeMargin;
-        for (int i = -radius; i <= radius; i++)
+        if (radius <= Mathf.Epsilon)
         {
-            for (int j = -radius; j <= radius; j++)
+            return 0;
+        }
+        float resourceGain = 0;
+        int radiusCeil = Mathf.CeilToInt(radius);
+        // The radius is slightly inflated to make the grass texture better match the resource object consumption
+        float sqrRad = radius * radius;
+        for (int i = -radiusCeil; i <= radiusCeil; i++)
+        {
+            for (int j = -radiusCeil; j <= radiusCeil; j++)
             {
                 float sqrDist = i*i + j*j;
                 if (sqrDist <= sqrRad)
@@ -113,9 +124,13 @@ public class TerrainTexture : MonoBehaviour
                     int x = center.x + i;
                     int y = center.y + j;
                     Color a = _textureMask.GetPixel(x, y);
-                    float distanceFactor = (1-sqrDist / sqrRad);
-                    float lerpAmount = distanceFactor * opacity;
-                    Color b = Color.Lerp(a, Color.black, lerpAmount);
+                    float distanceFactor = 1- sqrDist / sqrRad;
+                    float change = distanceFactor * opacity;
+                    Color b = a - new Color(change, 0, 0, 0);
+                    if (b.r < 0)
+                    {
+                        b.r = 0;
+                    }
                     resourceGain += (a.r - b.r) * _resourceGainPerGrassPixel;
                     _textureMask.SetPixel(x, y, b);
                 }

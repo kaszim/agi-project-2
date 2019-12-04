@@ -56,7 +56,7 @@
             half grassShadeStep = step(noisedMask, 0.7);
             fixed3 shadedGrass = lerp(grass.rgb, grass.rgb * 0.3, 1 - mask.r + grassShadeStep * 0.2);
             // Blend sand to grass based on mask texture
-            half grassSandStep = step(noisedMask, 0.5);
+            half grassSandStep = step(noisedMask, 0.2);
             o.Albedo = shadedGrass;
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
