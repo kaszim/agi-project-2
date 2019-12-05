@@ -35,8 +35,12 @@ public class ResourceExtractor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // TODO: Check if within territory
-        ConsumeResources();
+        // TODO: Check if within my territory
+        if ((Divider.Instance.IsOnRedSide(transform.position) && Divider.Instance.AmIRedPlayer()) || (!Divider.Instance.IsOnRedSide(transform.position) && !Divider.Instance.AmIRedPlayer()))
+            ConsumeResources();
+        else {
+            //TODO: Display some kind of red ring or something to indicate that the resource extractor cannot be placed here
+        }
     }
 
     void ConsumeResources()
@@ -75,10 +79,10 @@ public class ResourceExtractor : MonoBehaviour
         if (ammoPackPrefab)
         {
             var ammo = GameObject.Instantiate(ammoPackPrefab, transform.position + Vector3.up * terrain.WorldScale, Quaternion.identity);
-            if (transform.parent != null)
+            if (terrain.transform.parent != null)
             {
                 var tempScale = ammo.transform.localScale;
-                ammo.transform.SetParent(transform.parent);
+                ammo.transform.SetParent(terrain.transform.parent);
                 ammo.transform.localScale = tempScale;
             }
         }
