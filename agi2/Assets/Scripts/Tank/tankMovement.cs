@@ -43,14 +43,14 @@ public class tankMovement : MonoBehaviour {
         tankTracks = GameObject.Find(this.name + "/Tracks/Track"); // Hierarcy reference to the tracks.
         tankRenderer = tankTracks.GetComponent<Renderer>();
         rigidbody = GetComponent<Rigidbody>();
-        TankInput.Instance.ShootButton.OnShootClick.AddListener(Shoot);
+        TankGUI.Instance.ShootButton.OnShootClick.AddListener(Shoot);
     }
 
     // Update is called once per frame
     void Update()
     {
         //Tankmovement
-        Vector2 input = TankInput.Instance.Joystick.InputPositionPolar;
+        Vector2 input = TankGUI.Instance.Joystick.InputPositionPolar;
         AudioManager.Instance.TankSound(new Vector2(input.x, input.x)); //Update tank engine sound
         float rotateSign = Mathf.Sign(input.y);
         float rotationSpeed = (1 - Mathf.Abs((input.y) / Mathf.PI)) * 2000 * turnSpeed;
@@ -61,7 +61,6 @@ public class tankMovement : MonoBehaviour {
         {
             transform.position += transform.forward * movementDelta * Time.deltaTime;
         }
-        TankInput.Instance.Joystick.UpdateTankRotationIndicator(transform.rotation.eulerAngles.y);
         // Since we currently move the tank by setting the position directly, we can force the velocity to 0 to reduce physics errors in AR.
         rigidbody.velocity = Vector3.zero;
         rigidbody.angularVelocity = Vector3.zero;
@@ -77,6 +76,12 @@ public class tankMovement : MonoBehaviour {
         {
             Reload();
         }
+
+        // Update GUI components
+        TankGUI.Instance.Joystick.UpdateTankRotationIndicator(transform.rotation.eulerAngles.y);
+        // TODO: use the actual resource values
+        TankGUI.Instance.AmmoUI.ResourceValue = ammo;
+        TankGUI.Instance.HealthUI.ResourceValue = 5;
     }
 
     void Shoot()

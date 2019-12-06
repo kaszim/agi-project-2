@@ -51,21 +51,20 @@ public class ResourceExtractor : MonoBehaviour
         if (Vector3.SqrMagnitude((currentPosition - lastPosition) / terrain.WorldScale) > MoveDistanceDelta * MoveDistanceDelta)
         {
             pendingResetCounter += Time.deltaTime;
+            if (pendingResetCounter > 1)
+            {
+                lastMoveTime = Time.time;
+                lastPosition = currentPosition;
+            }
         }
         else
         {
             pendingResetCounter = 0;
+            // Consume resources
+            float timeSinceMove = Time.time - lastMoveTime;
+            float radius = Mathf.Min(maxExtractionRadius, extractionRadiusGrowthRate * timeSinceMove);
+            currentFuel += terrain.ConsumeResourcesWorldSpace(lastPosition, radius * terrain.WorldScale, Time.deltaTime*10);
         }
-        if (pendingResetCounter > 1)
-        {
-            lastMoveTime = Time.time;
-            lastPosition = currentPosition;
-        }
-
-        // Consume resources
-        float timeSinceMove = Time.time - lastMoveTime;
-        float radius = Mathf.Min(maxExtractionRadius, extractionRadiusGrowthRate * timeSinceMove);
-        currentFuel += terrain.ConsumeResourcesWorldSpace(transform.position, radius * terrain.WorldScale, Time.deltaTime*10);
         // Spend resources to create ammo packs
         if (currentFuel > fuelPerAmmoPack)
         {

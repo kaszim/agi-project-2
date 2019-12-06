@@ -65,4 +65,16 @@ public class ResourceObject : MonoBehaviour
         }
         return 0;
     }
+
+    public float GetResourceValue()
+    {
+        if (_valueScalesWithVolume)
+        {
+            return _resourceValue * transform.localScale.x * transform.localScale.y * transform.localScale.z;
+        }
+        else
+        {
+            return _resourceValue;
+        }
+    }
 }

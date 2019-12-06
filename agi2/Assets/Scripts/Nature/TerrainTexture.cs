@@ -26,7 +26,25 @@ public class TerrainTexture : MonoBehaviour
     const float PlaneSize = 10;
 
     /// Cache for sphere checks during resource consumption. Also defines the maximum number of objects to check each frame.
-    Collider[] physicsCache = new Collider[20];
+    Collider[] _physicsCache = new Collider[20];
+
+    float _redResources;
+    float _blueResources;
+    float _redResourcesStart;
+    float _blueResourcesStart;
+    bool _redIsUp = true;
+
+    void Update()
+    {
+        if (Networking.NetworkedGameObject.Player == Networking.Player.Red)
+        {
+            TankGUI.Instance.SetResourceFraction(_redResources / _redResourcesStart);
+        }
+        else
+        {
+            TankGUI.Instance.SetResourceFraction(_blueResources / _blueResourcesStart);
+        }
+    }
 
     void Start()
     {
@@ -76,6 +94,35 @@ public class TerrainTexture : MonoBehaviour
         _maskPixelsPerWorldUnit = _maskDimensions.x / transform.lossyScale.x / PlaneSize;
 
         _textureMask.Apply();
+
+        foreach (var item in Transform.FindObjectsOfType<ResourceObject>())
+        {
+            if (Divider.Instance.IsOnRedSide(item.transform.position))
+            {
+                _redResources += item.GetResourceValue();
+            }
+            else
+            {
+                _blueResources += item.GetResourceValue();
+            }
+        }
+        for (int x = 0; x < _textureMask.width; x++)
+        {
+            for (int y = 0; y < _textureMask.height; y++)
+            {
+                if (y < _maskDimensions.y / 2f && _redIsUp)
+                {
+                    _redResources += _textureMask.GetPixel(x, y).r * _resourceGainPerGrassPixel;
+                }
+                else
+                {
+                    _blueResources += _textureMask.GetPixel(x, y).r * _resourceGainPerGrassPixel;
+                }
+            }
+        }
+        _redResourcesStart = _redResources;
+        _blueResourcesStart = _blueResources;
+        _redIsUp = Divider.Instance.IsOnRedSide(transform.TransformPoint(Vector3.forward));
     }
 
     /// Consume resources (including grass and resource objects) in the specified spherical area (in world-space).
@@ -86,14 +133,23 @@ public class TerrainTexture : MonoBehaviour
         {
             return 0;
         }
-        int nResourceObjects = Physics.OverlapSphereNonAlloc(center, radius * 0.75f, physicsCache, _resourceObjectLayer);
+        int nResourceObjects = Physics.OverlapSphereNonAlloc(center, radius * 0.75f, _physicsCache, _resourceObjectLayer);
         float resourceGain = 0;
         for (int i = 0; i < nResourceObjects; i++)
         {
-            ResourceObject resource = physicsCache[i].GetComponent<ResourceObject>();
-            if (resource != null)
+            ResourceObject resource = _physicsCache[i].GetComponent<ResourceObject>();
+            if (resource != null && !resource.IsDepleted)
             {
-                resourceGain += resource.ConsumeResource();
+                float gain = resource.ConsumeResource();
+                resourceGain += gain;
+                if (Divider.Instance.IsOnRedSide(resource.transform.position))
+                {
+                    _redResources -= gain;
+                }
+                else
+                {
+                    _blueResources -= gain;
+                }
             }
         }
         // Consume grass
@@ -112,7 +168,6 @@ public class TerrainTexture : MonoBehaviour
         }
         float resourceGain = 0;
         int radiusCeil = Mathf.CeilToInt(radius);
-        // The radius is slightly inflated to make the grass texture better match the resource object consumption
         float sqrRad = radius * radius;
         for (int i = -radiusCeil; i <= radiusCeil; i++)
         {
@@ -131,7 +186,12 @@ public class TerrainTexture : MonoBehaviour
                     {
                         b.r = 0;
                     }
-                    resourceGain += (a.r - b.r) * _resourceGainPerGrassPixel;
+                    float gain = (a.r - b.r) * _resourceGainPerGrassPixel;
+                    resourceGain += gain;
+                    if (y < _maskDimensions.y / 2f && _redIsUp)
+                    {
+                        _redResources -= gain;
+                    }
                     _textureMask.SetPixel(x, y, b);
                 }
             }
