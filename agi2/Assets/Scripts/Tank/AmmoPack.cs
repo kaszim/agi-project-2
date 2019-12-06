@@ -19,7 +19,7 @@ public class AmmoPack : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player" && GetComponent<NetworkedGameObject>().Owner)
+        if(other.tag == "Player" && GetComponent<NetworkedGameObject>().IsOwned)
         {
             other.GetComponent <tankMovement>().Reload();
             Destroy(gameObject);

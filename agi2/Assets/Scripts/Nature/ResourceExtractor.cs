@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Networking;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,7 +37,7 @@ public class ResourceExtractor : MonoBehaviour
     void Update()
     {
         // TODO: Check if within my territory
-        if ((Divider.Instance.IsOnRedSide(transform.position) && Divider.Instance.AmIRedPlayer()) || (!Divider.Instance.IsOnRedSide(transform.position) && !Divider.Instance.AmIRedPlayer()))
+        if ((Divider.Instance.IsOnRedSide(transform.position) && NetworkedGameObject.Player == Player.Red) || (!Divider.Instance.IsOnRedSide(transform.position) && NetworkedGameObject.Player == Player.Blue))
             ConsumeResources();
         else {
             //TODO: Display some kind of red ring or something to indicate that the resource extractor cannot be placed here

@@ -3,23 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using Assets.Scripts.Networking;
 using Lidgren.Network;
+using Networking;
 using UnityEngine;
 using UnityEngine.Networking;
 
+public enum GameState
+{
+    ARDetection,
+    Game,
+}
+
 public class UnityServer : MonoBehaviour
 {
+    internal static UnityServer Instance { get; set; }
     public bool Server = false;
     private NetServer _server;
     private bool _running;
+    private GameState _state;
 
     private Action<NetIncomingMessage>[] _packetResponse;
 
+    public GameState GameState
+    {
+        get => _state;
+        set
+        {
+            _state = value;
+            BroadcastPacket(Packet.GameState, null, (int)_state);
+        }
+    }
+
     public void Awake()
     {
+        Instance = this;
         if (Server)
         {
+            _state = GameState.ARDetection;
             SetPacketResponses();
             var config = new NetPeerConfiguration("agi2");
             config.EnableMessageType(NetIncomingMessageType.DiscoveryRequest);
@@ -40,14 +60,42 @@ public class UnityServer : MonoBehaviour
             var pos = msg.ReadVector3();
             var rot = msg.ReadQuaternion();
             var scale = msg.ReadVector3();
-            SendPacket(Packet.Instantiate, msg.SenderConnection, prefabId, uid, pos, rot, scale);
+            BroadcastPacket(Packet.Instantiate, msg.SenderConnection, prefabId, uid, pos, rot, scale);
         };
         _packetResponse[Packet.TransformUpdate.ToByte()] = (msg) =>
         {
             var uid = msg.ReadInt64(); // Unique id for GameObject
             var pos = msg.ReadVector3();
             var rot = msg.ReadQuaternion();
-            SendPacket(Packet.TransformUpdate, msg.SenderConnection, uid, pos, rot);
+            BroadcastPacket(Packet.TransformUpdate, msg.SenderConnection, uid, pos, rot);
+        };
+        _packetResponse[Packet.ReadyAR.ToByte()] = (msg) =>
+        {
+            msg.SenderConnection.Tag = true;
+            if (_state == GameState.ARDetection && _server.Connections.TrueForAll((con) => (bool)con.Tag))
+            {
+                Debug.Log("GameState = Game");
+                // Everyone recognized AR Tag
+                GameState = GameState.Game;
+            }
+        };
+        _packetResponse[Packet.SyncVarUpdate.ToByte()] = (msg) =>
+        {
+            var uid = msg.ReadInt64();
+            var varUid = msg.ReadInt32();
+            var size = msg.ReadInt32();
+            var bytes = msg.ReadBytes(size);
+            BroadcastPacket(Packet.SyncVarUpdate, msg.SenderConnection, uid, varUid, bytes);
+        };
+        _packetResponse[Packet.Destroy.ToByte()] = (msg) =>
+        {
+            var uid = msg.ReadInt64();
+            BroadcastPacket(Packet.Destroy, msg.SenderConnection, uid);
+        };
+        _packetResponse[Packet.Explode.ToByte()] = (msg) =>
+        {
+            var name = msg.ReadString();
+            BroadcastPacket(Packet.Explode, msg.SenderConnection, name);
         };
     }
 
@@ -87,6 +135,7 @@ public class UnityServer : MonoBehaviour
                         NetConnectionStatus status = (NetConnectionStatus) msg.ReadByte();
                         if (status == NetConnectionStatus.Connected)
                         {
+                            msg.SenderConnection.Tag = false;
                             // New player connected
                         }
 
@@ -108,7 +157,7 @@ public class UnityServer : MonoBehaviour
         }
     }
 
-    private void SendPacket(Packet type, NetConnection except, params object[] args)
+    private NetOutgoingMessage WritePacket(Packet type, params object[] args)
     {
         NetOutgoingMessage om = _server.CreateMessage();
         om.Write(type.ToByte());
@@ -117,8 +166,19 @@ public class UnityServer : MonoBehaviour
         {
             om.Write(arg);
         }
+        return om;
+    }
+
+    private void BroadcastPacket(Packet type, NetConnection except, params object[] args)
+    {
+        var om = WritePacket(type, args);
         _server.SendToAll(om, except, NetDeliveryMethod.ReliableOrdered, 0);
     }
 
+    private void SendPacket(Packet type, NetConnection to, params object[] args)
+    {
+        var om = WritePacket(type, args);
+        _server.SendMessage(om, to, NetDeliveryMethod.ReliableOrdered, 0);
+    }
 
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Networking;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +12,9 @@ public class DestroyMesh : MonoBehaviour
         Explode(transform.position);
     }
 
-    public void Explode(Vector3 origin) {
+    public void Explode(Vector3 origin)
+    {
+        UnityClient.Instance.SendPacket(Packet.Explode, transform.name);
         GameObject newObj = Instantiate(destructableObject, this.transform.position, this.transform.rotation);
         newObj.transform.SetParent(this.transform.parent);
         newObj.transform.localScale = this.transform.localScale;

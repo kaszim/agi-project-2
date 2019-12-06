@@ -31,8 +31,4 @@ public class Divider : MonoBehaviour
     public bool IsOnRedSide(Vector3 position) {
         return Vector3.Dot(position, transform.forward) > 0;
     }
-
-    public bool AmIRedPlayer() {
-        return true; //TODO check if I actually am red player or not
-    }
 }

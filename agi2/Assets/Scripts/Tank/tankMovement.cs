@@ -31,10 +31,17 @@ public class tankMovement : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
+        networkedGameObject = GetComponent<NetworkedGameObject>();
+        // If the object is networked and we are not the owner
+        if (networkedGameObject != null && networkedGameObject.enabled && !networkedGameObject.IsOwned)
+        {
+            // We are not the owner of this object, therefore disable movement script
+            this.enabled = false;
+            return;
+        }
         string path = this.name;
         tankTracks = GameObject.Find(this.name + "/Tracks/Track"); // Hierarcy reference to the tracks.
         tankRenderer = tankTracks.GetComponent<Renderer>();
-        networkedGameObject = GetComponent<NetworkedGameObject>();
         rigidbody = GetComponent<Rigidbody>();
         TankInput.Instance.ShootButton.OnShootClick.AddListener(Shoot);
     }
@@ -42,14 +49,6 @@ public class tankMovement : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        // If the object is networked and we are not the owner
-        if (networkedGameObject != null && networkedGameObject.enabled && !networkedGameObject.Owner)
-        {
-            // We are not the owner of this object, therefore disable movement script
-            this.enabled = false;
-            TankInput.Instance.ShootButton.OnShootClick.RemoveListener(Shoot);
-        }
-
         //Tankmovement
         Vector2 input = TankInput.Instance.Joystick.InputPositionPolar;
         AudioManager.Instance.TankSound(new Vector2(input.x, input.x)); //Update tank engine sound
@@ -90,8 +89,10 @@ public class tankMovement : MonoBehaviour {
                 activeBullet.transform.SetParent(transform.parent);
                 activeBullet.transform.localScale = Vector3.Scale(tempScale, transform.localScale);
             }
-            activeBullet.GetComponent <Rigidbody>().velocity = transform.forward * bulletSpeed * transform.lossyScale.x;
-            AudioManager.Instance.Play("tankShoot");
+            var bulletComponent = activeBullet.GetComponent<BulletCollision>();
+            bulletComponent.Direction = transform.forward;
+            bulletComponent.Speed = bulletSpeed;
+            bulletComponent.XLossyScale = transform.lossyScale.x;
             ammo--;
         }
         else

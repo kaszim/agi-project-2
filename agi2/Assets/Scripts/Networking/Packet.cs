@@ -4,20 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Assets.Scripts.Networking
+namespace Networking
 {
     public enum Packet
     {
         Instantiate = 0,
         TransformUpdate,
-        Last
+        ReadyAR,
+        SpawnWorld,
+        SyncVarUpdate,
+        Destroy,
+        GameState,
+        Explode,
+        Last,
     }
 
     static class PacketExtensions
     {
         public static byte ToByte(this Packet type)
         {
-            return (byte) type;
+            return (byte)type;
         }
     }
 }

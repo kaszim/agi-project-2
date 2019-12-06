@@ -5,10 +5,14 @@ using Networking;
 
 public class BulletCollision : MonoBehaviour
 {
+    public Vector3 Direction { get; set; }
+    public float Speed { get; set; }
+    public float XLossyScale { get; set; }
     // Start is called before the first frame update
     void Start()
     {
-
+        AudioManager.Instance.Play("tankShoot");
+        GetComponent<Rigidbody>().velocity = Direction * Speed * XLossyScale;
     }
 
     // Update is called once per frame
@@ -18,12 +22,14 @@ public class BulletCollision : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider other) {
+        if (!GetComponent<NetworkedGameObject>().IsOwned)
+            return;
         switch (other.tag) {
             case "Destructable":
                 other.GetComponent<DestroyMesh> ().Explode(transform.position);
                 break;
             case "Player":
-                if(other.GetComponent<NetworkedGameObject> ().Owner)
+                if (other.GetComponent<NetworkedGameObject>().IsOwned)
                     return;
                 other.GetComponent<tankMovement> ().TakeDamage();
                 break;

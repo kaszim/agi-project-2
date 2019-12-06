@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using GoogleARCore;
+using Networking;
 using UnityEngine;
 
-namespace AR {
+namespace AR
+{
     public class SceneController : MonoBehaviour {
         public GameObject GameWorldPrefab;
         public GameObject World;
@@ -25,6 +27,13 @@ namespace AR {
         }
 
         void Update() {
+            if (Input.GetKeyDown(KeyCode.Q))    //debug AR recognize
+            {
+                Debug.Log("Recognizing AR Debug");
+                _gameWorld = Instantiate(GameWorldPrefab, World.transform);
+                _gameWorld.transform.localScale = Vector3.one * worldScale; //Scale down a bit so it isn't huge.
+                UnityClient.Instance.SendPacket(Packet.ReadyAR);
+            }
             // The session status must be Tracking in order to access the Frame.
             if (Session.Status != SessionStatus.Tracking) {
                 int lostTrackingSleepTimeout = 15;
@@ -37,8 +46,8 @@ namespace AR {
 
             foreach (var image in _augmentedImages) {
                 if (_gameWorld != null && image.TrackingState == TrackingState.Tracking && spawnedExtractor == null && 
-                    (image.Name == "redExtractor" && Divider.Instance.AmIRedPlayer() ||
-                    image.Name == "blueExtractor" && !Divider.Instance.AmIRedPlayer())) {
+                    (image.Name == "redExtractor" && NetworkedGameObject.Player == Player.Red ||
+                    image.Name == "blueExtractor" && NetworkedGameObject.Player == Player.Blue)) {
                     extractorAnchor = image.CreateAnchor(image.CenterPose);
                     spawnedExtractor = Instantiate(resourceExtractor, World.transform);
                     spawnedExtractor.transform.localScale = Vector3.one * worldScale;
@@ -50,6 +59,8 @@ namespace AR {
                     worldAnchor = image.CreateAnchor(image.CenterPose);
                     _gameWorld = Instantiate(GameWorldPrefab, World.transform);
                     _gameWorld.transform.localScale = Vector3.one * worldScale; //Scale down a bit so it isn't huge.
+                    Debug.Log("Recognizing AR");
+                    UnityClient.Instance.SendPacket(Packet.ReadyAR);
                 } else if (image.TrackingState == TrackingState.Stopped) {
                     // TODO: Display something that tracking was lost
                 }

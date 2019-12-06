@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Assets.Scripts.Networking;
 using Lidgren.Network;
 using UnityEngine;
 
@@ -11,7 +10,7 @@ namespace Networking
 {
     class UnityClient : MonoBehaviour
     {
-        internal static UnityClient _instance;
+        internal static UnityClient Instance;
 
         private Func<NetIncomingMessage, Action>[] _packetResponse;
         private NetClient _client;
@@ -19,6 +18,7 @@ namespace Networking
         private Dictionary<long, GameObject> _gameObjects;
         // A queue for running Unity stuff in main thread
         private Queue<Action> _networkQueue;
+        private GameObject GameWorld => GameObject.FindWithTag("GameWorld");
 
         // Just a helper to return no action
         private readonly Action DoNothing = () => { };
@@ -26,12 +26,17 @@ namespace Networking
         private Dictionary<int, GameObject> _prefabs;
         // TODO: Detect these
         public GameObject[] NetworkedPrefabs;
-        public GameObject World;
+
+        public GameState GameState { get; set; }
+        // Event for GameState change
+        public event Action<GameState> OnGameStateChange;
 
         public void Awake()
         {
             // TODO: Ensure singelton
-            _instance = this;
+            Instance = this;
+
+            GameState = GameState.ARDetection;
 
             SetPacketResponses();
             _prefabs = new Dictionary<int, GameObject>();
@@ -50,6 +55,7 @@ namespace Networking
             _client.DiscoverLocalPeers(54677);
             Task.Run(Listen);
         }
+
         private void SetPacketResponses()
         {
             _packetResponse = new Func<NetIncomingMessage, Action>[Packet.Last.ToByte() + 1];
@@ -66,10 +72,12 @@ namespace Networking
                     // If it does not already exist there create it
                     return () =>
                     {
-                        var go = Instantiate(_prefabs[prefabId], pos, rot, World.transform);
+                        var go = Instantiate(_prefabs[prefabId], pos, rot, GameWorld.transform);
                         go.transform.localScale = scale;
-                        go.GetComponent<NetworkedGameObject>().UID =
+                        var ngo = go.GetComponent<NetworkedGameObject>();
+                        ngo.UID =
                             uid; // Set UID so we don't send this object to server
+                        ngo.IsOwned = false;
                         _gameObjects.Add(uid, go);
                     };
                 }
@@ -81,9 +89,34 @@ namespace Networking
                 var uid = msg.ReadInt64(); // Unique id for GameObject
                 var pos = msg.ReadVector3();
                 var rot = msg.ReadQuaternion();
-                return () => {
-                    _gameObjects[uid].transform.position = pos;
-                    _gameObjects[uid].transform.rotation = rot;
+                return () => _gameObjects[uid].GetComponent<NetworkedGameObject>().UpdateTransform(pos, rot);
+            };
+            _packetResponse[Packet.SyncVarUpdate.ToByte()] = (msg) =>
+            {
+                var uid = msg.ReadInt64();
+                var go = _gameObjects[uid];
+                var ngo = go.GetComponent<NetworkedGameObject>();
+                return () => ngo.ReceiveSyncVarUpdate(msg.ReadInt32(), msg);
+            };
+            _packetResponse[Packet.Destroy.ToByte()] = (msg) =>
+            {
+                var uid = msg.ReadInt64();
+                var go = _gameObjects[uid];
+                _gameObjects.Remove(uid);
+                return () => Destroy(go);
+            };
+            _packetResponse[Packet.GameState.ToByte()] = (msg) =>
+            {
+                GameState = (GameState)msg.ReadInt32();
+                return () => OnGameStateChange(GameState);
+            };
+            _packetResponse[Packet.Explode.ToByte()] = (msg) =>
+            {
+                var name = msg.ReadString();
+                return () =>
+                {
+                    var obj = GameWorld.transform.Find(name);
+                    obj.GetComponent<DestroyMesh>().Explode(obj.transform.position);
                 };
             };
         }
@@ -140,13 +173,18 @@ namespace Networking
             _client.SendMessage(om, NetDeliveryMethod.ReliableOrdered);
         }
 
-
         public long InstantiateNetwork(NetworkedGameObject go)
         {
             // Get a new uid
             var uid = DateTime.UtcNow.Ticks;
             SendPacket(Packet.Instantiate, go.TypeId, uid, go.transform.position, go.transform.rotation, go.transform.localScale);
             return uid;
+        }
+
+        public void DestroyNetwork(long UID)
+        {
+            SendPacket(Packet.Destroy, UID);
+            _gameObjects.Remove(UID);
         }
     }
 }
