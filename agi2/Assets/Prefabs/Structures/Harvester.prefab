@@ -921,7 +921,7 @@ MonoBehaviour:
   fuelPerAmmoPack: 100
   maxExtractionRadius: 20
   extractionRadiusGrowthRate: 2
-  ammoPackPrefab: {fileID: 3709186231202381055, guid: aefa6e8bc66664bf9b0ae3961779af84,
+  ammoPackPrefab: {fileID: 3062922356512533537, guid: f0528ebe8a657e94bb939af936ef743d,
     type: 3}
 --- !u!1 &3649192812493991744
 GameObject:
