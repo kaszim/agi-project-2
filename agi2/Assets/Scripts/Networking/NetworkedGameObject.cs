@@ -89,7 +89,7 @@ namespace Networking
             while (IsOwned)
             {
                 UnityClient.Instance.SendPacket(Packet.TransformUpdate, UID, _pos, _rot);
-                await Task.Delay(33); // Roughly 30 times a second
+                await Task.Delay(16); // Roughly 60 times a second
             }
         }
 
