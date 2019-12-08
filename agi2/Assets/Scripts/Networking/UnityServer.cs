@@ -97,6 +97,11 @@ public class UnityServer : MonoBehaviour
             var name = msg.ReadString();
             BroadcastPacket(Packet.Explode, msg.SenderConnection, name);
         };
+        _packetResponse[Packet.HitTank.ToByte()] = (msg) =>
+        {
+            var uid = msg.ReadInt64();
+            BroadcastPacket(Packet.HitTank, msg.SenderConnection, uid);
+        };
     }
 
     public void Run()

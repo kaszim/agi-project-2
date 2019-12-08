@@ -32,6 +32,7 @@ public class BulletCollision : MonoBehaviour
                 if (other.GetComponent<NetworkedGameObject>().IsOwned)
                     return;
                 other.GetComponent<tankMovement> ().TakeDamage();
+                UnityClient.Instance.SendPacket(Packet.HitTank, other.GetComponent<NetworkedGameObject>().UID); 
                 break;
             default:
                 break;

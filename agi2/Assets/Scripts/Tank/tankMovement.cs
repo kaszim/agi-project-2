@@ -10,6 +10,7 @@ public class tankMovement : MonoBehaviour {
     [SerializeField] private float epsilon;
 
     //Tank related
+    [SerializeField] private int health = 5;
 
     //Bullet related
     [SerializeField] private GameObject bullet;
@@ -17,7 +18,7 @@ public class tankMovement : MonoBehaviour {
     [SerializeField] private Vector3 bulletOrigin;
 
     //ammo
-    private int ammo;
+    private int ammo = 5;
     [SerializeField] private int ammoLimit;
 
     //Track related
@@ -81,7 +82,7 @@ public class tankMovement : MonoBehaviour {
         TankGUI.Instance.Joystick.UpdateTankRotationIndicator(transform.rotation.eulerAngles.y);
         // TODO: use the actual resource values
         TankGUI.Instance.AmmoUI.ResourceValue = ammo;
-        TankGUI.Instance.HealthUI.ResourceValue = 5;
+        TankGUI.Instance.HealthUI.ResourceValue = health;
     }
 
     void Shoot()
@@ -111,7 +112,8 @@ public class tankMovement : MonoBehaviour {
         ammo = ammoLimit;
     }
 
-    public void TakeDamage() {
-        //TODO take damage
+    public void TakeDamage() 
+    {            
+        health--;
     }
 }

@@ -665,6 +665,7 @@ MonoBehaviour:
   movementSpeed: 20
   turnSpeed: 0.5
   epsilon: 0.1
+  health: 5
   bullet: {fileID: 1085274913015166348, guid: 6a4df11640aca42fca5184deb0ed1465, type: 3}
   bulletSpeed: 20
   bulletOrigin: {x: 0, y: 2.81, z: 8}

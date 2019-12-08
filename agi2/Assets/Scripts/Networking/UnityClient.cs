@@ -89,7 +89,15 @@ namespace Networking
                 var uid = msg.ReadInt64(); // Unique id for GameObject
                 var pos = msg.ReadVector3();
                 var rot = msg.ReadQuaternion();
-                return () => _gameObjects[uid].GetComponent<NetworkedGameObject>().UpdateTransform(pos, rot);
+                if (_gameObjects.ContainsKey(uid))
+                {
+                    var go = _gameObjects[uid];
+                    return () => go.GetComponent<NetworkedGameObject>().UpdateTransform(pos, rot);
+                } else
+                {
+                    return DoNothing;
+                }
+                
             };
             _packetResponse[Packet.SyncVarUpdate.ToByte()] = (msg) =>
             {
@@ -102,8 +110,11 @@ namespace Networking
             {
                 var uid = msg.ReadInt64();
                 var go = _gameObjects[uid];
-                _gameObjects.Remove(uid);
-                return () => Destroy(go);
+                return () =>
+                {
+                    _gameObjects.Remove(uid);
+                    Destroy(go);
+                };
             };
             _packetResponse[Packet.GameState.ToByte()] = (msg) =>
             {
@@ -119,9 +130,15 @@ namespace Networking
                     obj.GetComponent<DestroyMesh>().Explode(obj.transform.position);
                 };
             };
+            _packetResponse[Packet.HitTank.ToByte()] = (msg) =>
+            {
+                var uid = msg.ReadInt64();
+                var go = _gameObjects[uid];
+                return () => go.GetComponent<tankMovement>().TakeDamage();
+            };
         }
 
-        public void FixedUpdate()
+        public void Update()
         {
             while (_networkQueue.Count > 0)
             {
@@ -178,6 +195,7 @@ namespace Networking
             // Get a new uid
             var uid = DateTime.UtcNow.Ticks;
             SendPacket(Packet.Instantiate, go.TypeId, uid, go.transform.position, go.transform.rotation, go.transform.localScale);
+            _gameObjects.Add(uid, go.gameObject);
             return uid;
         }
 

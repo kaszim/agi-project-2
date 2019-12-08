@@ -16,6 +16,7 @@ namespace Networking
         Destroy,
         GameState,
         Explode,
+        HitTank,
         Last,
     }
 
