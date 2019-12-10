@@ -46,7 +46,7 @@ public class ResourceExtractor : MonoBehaviour
 
     void ConsumeResources()
     {
-        // Check if we have moved the extractor. If so, reset the radius. 
+        // Check if we have moved the extractor. If so, reset the radius.
         Vector3 currentPosition = transform.position;
         if (Vector3.SqrMagnitude((currentPosition - lastPosition) / terrain.WorldScale) > MoveDistanceDelta * MoveDistanceDelta)
         {
@@ -78,7 +78,12 @@ public class ResourceExtractor : MonoBehaviour
     {
         if (ammoPackPrefab)
         {
-            var ammo = GameObject.Instantiate(ammoPackPrefab, transform.position + Vector3.up * terrain.WorldScale, Quaternion.identity);
+            var spawnPosition = transform.position;
+            var angle = Random.Range(0, Mathf.PI * 2);
+            var distance = 10;
+            spawnPosition += new Vector3(Mathf.Sin(angle) * distance, 0, Mathf.Cos(angle) * distance) * terrain.WorldScale;
+            spawnPosition.y = terrain.transform.position.y;
+            var ammo = GameObject.Instantiate(ammoPackPrefab, spawnPosition, Quaternion.identity);
             if (terrain.transform.parent != null)
             {
                 var tempScale = ammo.transform.localScale;

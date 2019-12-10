@@ -107,13 +107,19 @@ public class tankMovement : MonoBehaviour {
         }
     }
 
-    public void Reload()
+    /// Returns true if the ammo increased from this action.
+    public bool Reload()
     {
-        ammo = ammoLimit;
+        if (ammo < ammoLimit)
+        {
+            ammo = ammoLimit;
+            return true;
+        }
+        return false;
     }
 
-    public void TakeDamage() 
-    {            
+    public void TakeDamage()
+    {
         health--;
     }
 }
