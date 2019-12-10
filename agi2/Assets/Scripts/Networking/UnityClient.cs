@@ -1,7 +1,6 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using Lidgren.Network;
 using UnityEngine;
@@ -17,7 +16,7 @@ namespace Networking
         private bool _running;
         private Dictionary<long, GameObject> _gameObjects;
         // A queue for running Unity stuff in main thread
-        private Queue<Action> _networkQueue;
+        private ConcurrentQueue<Action> _networkQueue;
         private GameObject GameWorld => GameObject.FindWithTag("GameWorld");
 
         // Just a helper to return no action
@@ -46,7 +45,7 @@ namespace Networking
             }
 
             _gameObjects = new Dictionary<long, GameObject>();
-            _networkQueue = new Queue<Action>();
+            _networkQueue = new ConcurrentQueue<Action>();
             NetPeerConfiguration config = new NetPeerConfiguration("agi2");
             config.EnableMessageType(NetIncomingMessageType.DiscoveryResponse);
             _client = new NetClient(config);
@@ -140,9 +139,9 @@ namespace Networking
 
         public void Update()
         {
-            while (_networkQueue.Count > 0)
+            while (_networkQueue.TryDequeue(out Action action))
             {
-                _networkQueue.Dequeue().Invoke();
+                action.Invoke();
             }
         }
 
