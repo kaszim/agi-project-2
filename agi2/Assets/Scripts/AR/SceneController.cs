@@ -11,10 +11,10 @@ namespace AR
         public GameObject World;
         public GameObject resourceExtractor;
 
-        [SerializeField] private float worldScale;
+        [SerializeField] private float inverseWorldScale;
 
         private List<AugmentedImage> _augmentedImages = new List<AugmentedImage>();
-        
+
 
         private Anchor worldAnchor;
         private Anchor extractorAnchor;
@@ -31,7 +31,6 @@ namespace AR
             {
                 Debug.Log("Recognizing AR Debug");
                 _gameWorld = Instantiate(GameWorldPrefab, World.transform);
-                _gameWorld.transform.localScale = Vector3.one * worldScale; //Scale down a bit so it isn't huge.
                 UnityClient.Instance.SendPacket(Packet.ReadyAR);
             }
             // The session status must be Tracking in order to access the Frame.
@@ -45,12 +44,11 @@ namespace AR
             Session.GetTrackables<AugmentedImage>(_augmentedImages, TrackableQueryFilter.Updated);
 
             foreach (var image in _augmentedImages) {
-                if (_gameWorld != null && image.TrackingState == TrackingState.Tracking && spawnedExtractor == null && 
+                if (_gameWorld != null && image.TrackingState == TrackingState.Tracking && spawnedExtractor == null &&
                     (image.Name == "redExtractor" && NetworkedGameObject.Player == Player.Red ||
                     image.Name == "blueExtractor" && NetworkedGameObject.Player == Player.Blue)) {
                     extractorAnchor = image.CreateAnchor(image.CenterPose);
                     spawnedExtractor = Instantiate(resourceExtractor, World.transform);
-                    spawnedExtractor.transform.localScale = Vector3.one * worldScale;
                     continue;
                 }
 
@@ -58,7 +56,6 @@ namespace AR
                     // Create an anchor to ensure that ARCore keeps tracking this augmented image.
                     worldAnchor = image.CreateAnchor(image.CenterPose);
                     _gameWorld = Instantiate(GameWorldPrefab, World.transform);
-                    _gameWorld.transform.localScale = Vector3.one * worldScale; //Scale down a bit so it isn't huge.
                     Debug.Log("Recognizing AR");
                     UnityClient.Instance.SendPacket(Packet.ReadyAR);
                 } else if (image.TrackingState == TrackingState.Stopped) {
@@ -66,14 +63,18 @@ namespace AR
                 }
             }
 
-            if(spawnedExtractor != null && extractorAnchor != null) {
-                spawnedExtractor.transform.position = extractorAnchor.transform.position;
-                spawnedExtractor.transform.eulerAngles = new Vector3(0, extractorAnchor.transform.eulerAngles.y, 0);
+            //Update position of game world based on camera and anchor
+            if (_gameWorld != null && worldAnchor != null) {
+                _gameWorld.transform.position = Camera.main.transform.position + (worldAnchor.transform.position - Camera.main.transform.position) * inverseWorldScale;
+                _gameWorld.transform.eulerAngles = new Vector3(0, worldAnchor.transform.eulerAngles.y, 0); //Update rotation but keep the world flat so it doesn't mess up gravity.
+
             }
 
-            if (_gameWorld != null && worldAnchor != null) {
-                _gameWorld.transform.position = worldAnchor.transform.position; //Update position
-                _gameWorld.transform.eulerAngles = new Vector3 (0, worldAnchor.transform.eulerAngles.y, 0); //Update rotation but keep the world flat so it doesn't mess up gravity.
+            //Update position of harvester based on camera and anchor
+            if (spawnedExtractor != null && extractorAnchor != null) {
+                spawnedExtractor.transform.position = Camera.main.transform.position + (extractorAnchor.transform.position - Camera.main.transform.position) * inverseWorldScale;
+                spawnedExtractor.transform.position = new Vector3(spawnedExtractor.transform.position.x, _gameWorld.transform.position.y, spawnedExtractor.transform.position.z); //make sure harvester stays level with game world
+                spawnedExtractor.transform.eulerAngles = new Vector3(0, extractorAnchor.transform.eulerAngles.y, 0);
             }
 
         }

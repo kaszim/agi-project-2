@@ -226,7 +226,7 @@ MonoBehaviour:
   World: {fileID: 2125034547}
   resourceExtractor: {fileID: 3597255787789211114, guid: f0f0669d47d1f3d4cab096c2076d4add,
     type: 3}
-  worldScale: 0.002
+  inverseWorldScale: 200
 --- !u!4 &160887325
 Transform:
   m_ObjectHideFlags: 0
@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e582f0b397b3749af557233511056d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Server: 0
+  Server: 1
 --- !u!114 &160887327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -548,6 +548,15 @@ PrefabInstance:
     - target: {fileID: 4442908887562770, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1637996540812124, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
+    - target: {fileID: 20155940112608238, guid: c10877f7cd5764de18d46d7b777d1faa,
+        type: 3}
+      propertyPath: far clip plane
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c10877f7cd5764de18d46d7b777d1faa, type: 3}
