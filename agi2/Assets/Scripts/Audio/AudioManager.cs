@@ -34,11 +34,7 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        Play("tankSlow");
-        Play("tankMedium");
-        Play("tankFast");
-
-        TankSound(Vector2.zero);
+        
     }
 
     public void Play(string name)

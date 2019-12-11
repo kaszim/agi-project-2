@@ -48,6 +48,13 @@ public class tankMovement : MonoBehaviour {
         rigidbody = GetComponent<Rigidbody>();
         TankGUI.Instance.ShootButton.OnShootClick.AddListener(Shoot);
         ammo = ammoLimit;
+        if(networkedGameObject != null && networkedGameObject.enabled && networkedGameObject.IsOwned) {
+            AudioManager.Instance.Play("tankSlow");
+            AudioManager.Instance.Play("tankMedium");
+            AudioManager.Instance.Play("tankFast");
+
+            AudioManager.Instance.TankSound(Vector2.zero);
+        }
     }
 
     // Update is called once per frame

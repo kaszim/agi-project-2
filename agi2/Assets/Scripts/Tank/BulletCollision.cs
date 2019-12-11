@@ -27,12 +27,14 @@ public class BulletCollision : MonoBehaviour
         switch (other.tag) {
             case "Destructable":
                 other.GetComponent<DestroyMesh> ().Explode(transform.position);
+                AudioManager.Instance.Play("impact");
                 break;
             case "Player":
                 if (other.GetComponent<NetworkedGameObject>().IsOwned)
                     return;
                 other.GetComponent<tankMovement> ().TakeDamage();
-                UnityClient.Instance.SendPacket(Packet.HitTank, other.GetComponent<NetworkedGameObject>().UID); 
+                UnityClient.Instance.SendPacket(Packet.HitTank, other.GetComponent<NetworkedGameObject>().UID);
+                AudioManager.Instance.Play("impact");
                 break;
             default:
                 break;
