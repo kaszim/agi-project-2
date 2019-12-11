@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Destructable
   - GameWorld
+  - BlueBase
+  - RedBase
   layers:
   - Default
   - TransparentFX

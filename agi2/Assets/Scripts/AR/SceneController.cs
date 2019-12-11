@@ -49,6 +49,7 @@ namespace AR
                     image.Name == "blueExtractor" && NetworkedGameObject.Player == Player.Blue)) {
                     extractorAnchor = image.CreateAnchor(image.CenterPose);
                     spawnedExtractor = Instantiate(resourceExtractor, World.transform);
+                    UnityClient.Instance.SendPacket(Packet.ReadyAR); //Say ready when both world and harvester scanned
                     continue;
                 }
 
@@ -57,7 +58,6 @@ namespace AR
                     worldAnchor = image.CreateAnchor(image.CenterPose);
                     _gameWorld = Instantiate(GameWorldPrefab, World.transform);
                     Debug.Log("Recognizing AR");
-                    UnityClient.Instance.SendPacket(Packet.ReadyAR);
                 } else if (image.TrackingState == TrackingState.Stopped) {
                     // TODO: Display something that tracking was lost
                 }

@@ -18,7 +18,9 @@ public class GameController : MonoBehaviour
     {
         if (newState == GameState.Game)
         {
+            Transform spawnPoint = (NetworkedGameObject.Player == Player.Blue) ? GameObject.FindGameObjectWithTag("BlueBase").transform : GameObject.FindGameObjectWithTag("RedBase").transform;
             var tank = Instantiate(TankPrefab, GameWorld.transform);
+            tank.transform.position = spawnPoint.position;
             var tm = tank.GetComponent<tankMovement>();
         }
     }
