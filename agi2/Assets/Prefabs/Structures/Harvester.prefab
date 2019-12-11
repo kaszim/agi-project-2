@@ -918,7 +918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7838fa83772fd5b409c8bb519141e373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fuelPerAmmoPack: 100
+  fuelPerAmmoPack: 1000
   maxExtractionRadius: 20
   extractionRadiusGrowthRate: 2
   ammoPackPrefab: {fileID: 3062922356512533537, guid: f0528ebe8a657e94bb939af936ef743d,

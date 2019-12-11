@@ -25,6 +25,8 @@ public class ResourceExtractor : MonoBehaviour
     // Time before resetting the radius after moving (used to increase robustness in case of errors in AR tracking)
     const float PendingMoveTime = 1;
 
+    private AmmoPack currentAmmoPack; //The current ammo pack in scene
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +40,7 @@ public class ResourceExtractor : MonoBehaviour
     {
         // TODO: Check if within my territory
         if ((Divider.Instance.IsOnRedSide(transform.position) && NetworkedGameObject.Player == Player.Red) || (!Divider.Instance.IsOnRedSide(transform.position) && NetworkedGameObject.Player == Player.Blue))
-            ConsumeResources();
+                ConsumeResources();
         else {
             //TODO: Display some kind of red ring or something to indicate that the resource extractor cannot be placed here
         }
@@ -61,9 +63,11 @@ public class ResourceExtractor : MonoBehaviour
         {
             pendingResetCounter = 0;
             // Consume resources
-            float timeSinceMove = Time.time - lastMoveTime;
-            float radius = Mathf.Min(maxExtractionRadius, extractionRadiusGrowthRate * timeSinceMove);
-            currentFuel += terrain.ConsumeResourcesWorldSpace(lastPosition, radius * terrain.WorldScale, Time.deltaTime*10);
+            if (currentAmmoPack == null) {
+                float timeSinceMove = Time.time - lastMoveTime;
+                float radius = Mathf.Min(maxExtractionRadius, extractionRadiusGrowthRate * timeSinceMove);
+                currentFuel += terrain.ConsumeResourcesWorldSpace(lastPosition, radius * terrain.WorldScale, Time.deltaTime * 10);
+            }
         }
         // Spend resources to create ammo packs
         if (currentFuel > fuelPerAmmoPack)
@@ -83,12 +87,12 @@ public class ResourceExtractor : MonoBehaviour
             var distance = 10;
             spawnPosition += new Vector3(Mathf.Sin(angle) * distance, 0, Mathf.Cos(angle) * distance) * terrain.WorldScale;
             spawnPosition.y = terrain.transform.position.y;
-            var ammo = GameObject.Instantiate(ammoPackPrefab, spawnPosition, Quaternion.identity);
+            currentAmmoPack = GameObject.Instantiate(ammoPackPrefab, spawnPosition, Quaternion.identity);
             if (terrain.transform.parent != null)
             {
-                var tempScale = ammo.transform.localScale;
-                ammo.transform.SetParent(terrain.transform.parent);
-                ammo.transform.localScale = tempScale;
+                var tempScale = currentAmmoPack.transform.localScale;
+                currentAmmoPack.transform.SetParent(terrain.transform.parent);
+                currentAmmoPack.transform.localScale = tempScale;
             }
         }
     }
