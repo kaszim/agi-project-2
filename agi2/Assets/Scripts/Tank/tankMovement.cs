@@ -144,5 +144,13 @@ public class tankMovement : MonoBehaviour {
     public void TakeDamage()
     {
         health--;
+        if(health == 0 && networkedGameObject != null && networkedGameObject.enabled){
+            if(networkedGameObject.IsOwned){
+                Winscreen.Instance.ActivateLose();
+            }
+            else{
+                Winscreen.Instance.ActivateWin();
+            }
+        }
     }
 }
