@@ -22,7 +22,7 @@ public class ShootButtonAnimation : MonoBehaviour
     void Update()
     {
         float lerpStep = 1 - Mathf.Exp(-5 / Duration * Time.deltaTime);
-        transform.localScale = Vector3.Lerp(transform.localScale, _originalScale * 5, lerpStep);
+        transform.localScale = Vector3.Lerp(transform.localScale, _originalScale * 8, lerpStep);
         _image.color = Color.Lerp(_image.color, new Color(1,1,1,0), lerpStep);
     }
 }

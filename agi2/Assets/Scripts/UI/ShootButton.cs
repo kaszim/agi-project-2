@@ -20,7 +20,16 @@ public class ShootButton : MonoBehaviour
         OnShootClick.Invoke();
         if (_animationObjectPrefab)
         {
-            var instObj = Instantiate(_animationObjectPrefab, transform.position, new Quaternion());
+            Vector3 position;
+            if (Input.touchCount <= 1)
+            {
+                position = Input.mousePosition;
+            }
+            else
+            {
+                position = Input.GetTouch(1).position;
+            }
+            var instObj = Instantiate(_animationObjectPrefab, position, new Quaternion());
             instObj.transform.SetParent(transform);
             instObj.Duration = _animationDuration;
             Destroy(instObj, _animationDuration);

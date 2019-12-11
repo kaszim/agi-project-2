@@ -15,7 +15,6 @@ public class tankMovement : MonoBehaviour {
     //Bullet related
     [SerializeField] private GameObject bullet;
     [SerializeField] private float bulletSpeed;
-    [SerializeField] private Vector3 bulletOrigin;
 
     //ammo
     private int ammo = 5;
@@ -28,6 +27,9 @@ public class tankMovement : MonoBehaviour {
 
     NetworkedGameObject networkedGameObject;
     new Rigidbody rigidbody;
+
+    [SerializeField] GameObject upperBody = null;
+    [SerializeField] Transform bulletOrigin = null;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +47,7 @@ public class tankMovement : MonoBehaviour {
         tankRenderer = tankTracks.GetComponent<Renderer>();
         rigidbody = GetComponent<Rigidbody>();
         TankGUI.Instance.ShootButton.OnShootClick.AddListener(Shoot);
+        ammo = ammoLimit;
     }
 
     // Update is called once per frame
@@ -80,7 +83,6 @@ public class tankMovement : MonoBehaviour {
 
         // Update GUI components
         TankGUI.Instance.Joystick.UpdateTankRotationIndicator(transform.rotation.eulerAngles.y);
-        // TODO: use the actual resource values
         TankGUI.Instance.AmmoUI.ResourceValue = ammo;
         TankGUI.Instance.HealthUI.ResourceValue = health;
     }
@@ -88,18 +90,39 @@ public class tankMovement : MonoBehaviour {
     void Shoot()
     {
         if(ammo > 0){
-            GameObject activeBullet = Instantiate(bullet, transform.TransformPoint(bulletOrigin), Quaternion.identity);
-            if (transform.parent != null)
+            Ray ray;
+            if (Input.touchCount <= 1)
             {
-                Vector3 tempScale = activeBullet.transform.localScale;
-                activeBullet.transform.SetParent(transform.parent);
-                activeBullet.transform.localScale = Vector3.Scale(tempScale, transform.localScale);
+                ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             }
-            var bulletComponent = activeBullet.GetComponent<BulletCollision>();
-            bulletComponent.Direction = transform.forward;
-            bulletComponent.Speed = bulletSpeed;
-            bulletComponent.XLossyScale = transform.lossyScale.x;
-            ammo--;
+            else
+            {
+                ray = Camera.main.ScreenPointToRay(Input.GetTouch(1).position);
+            }
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit))
+            {
+                Vector3 target = hit.point;
+                upperBody.transform.LookAt(target);
+                Vector3 rotation = upperBody.transform.rotation.eulerAngles;
+                rotation.x = 0;
+                rotation.z = 0;
+                Vector3 bulletRotation = rotation;
+                rotation.y -= 90;
+                upperBody.transform.rotation = Quaternion.Euler(rotation);
+                GameObject activeBullet = Instantiate(bullet, bulletOrigin.position, Quaternion.Euler(bulletRotation));
+                if (transform.parent != null)
+                {
+                    Vector3 tempScale = activeBullet.transform.localScale;
+                    activeBullet.transform.SetParent(transform.parent);
+                    activeBullet.transform.localScale = Vector3.Scale(tempScale, transform.localScale);
+                }
+                var bulletComponent = activeBullet.GetComponent<BulletCollision>();
+                bulletComponent.Direction = bulletComponent.transform.forward;
+                bulletComponent.Speed = bulletSpeed;
+                bulletComponent.XLossyScale = transform.lossyScale.x;
+                ammo--;
+            }
         }
         else
         {
