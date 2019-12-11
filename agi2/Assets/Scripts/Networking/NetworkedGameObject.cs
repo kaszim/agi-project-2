@@ -21,7 +21,7 @@ namespace Networking
         public long UID { get; set; }
         [HideInInspector]
         public bool IsOwned { get; set; } = true;
-        public static Player Player => UnityServer.Instance.enabled ? Player.Red : Player.Blue;
+        public static Player Player => UnityServer.Instance.Server ? Player.Red : Player.Blue;
 
         private Vector3 _pos;
         private Quaternion _rot;

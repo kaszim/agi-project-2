@@ -628,6 +628,7 @@ GameObject:
   - component: {fileID: -5443360492162956355}
   - component: {fileID: -3442252586784801846}
   - component: {fileID: -6079552740291391695}
+  - component: {fileID: 7946744166748969208}
   m_Layer: 11
   m_Name: Tank
   m_TagString: Player
@@ -728,6 +729,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainRemovalRadius: 2
+--- !u!114 &7946744166748969208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7767538280965414879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de3c313c929d4bd690647485faaaa6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Red: {fileID: 2100000, guid: 85aa6a0b403074c31a2438c79bd13065, type: 2}
+  Blue: {fileID: 2100000, guid: 95893277c96f54db8beac39a1e203130, type: 2}
 --- !u!1 &8100079727051548339
 GameObject:
   m_ObjectHideFlags: 0
