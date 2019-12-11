@@ -21,7 +21,7 @@ public class ResourceExtractor : MonoBehaviour
     float pendingResetCounter = 0;
 
     // Delta position distance (in scaled world space) for detecting a move
-    const float MoveDistanceDelta = 5f;
+    const float MoveDistanceDelta = 10f;
     // Time before resetting the radius after moving (used to increase robustness in case of errors in AR tracking)
     const float PendingMoveTime = 1;
 
