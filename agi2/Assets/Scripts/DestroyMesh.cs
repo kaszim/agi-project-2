@@ -7,11 +7,6 @@ public class DestroyMesh : MonoBehaviour
 {
     public GameObject destructableObject; // The mesh with all the sliced parts
 
-    private void OnMouseDown()
-    {
-        Explode(transform.position);
-    }
-
     public void Explode(Vector3 origin)
     {
         UnityClient.Instance.SendPacket(Packet.Explode, transform.name);
