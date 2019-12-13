@@ -32,7 +32,7 @@ public class BulletCollision : MonoBehaviour
             case "Player":
                 if (other.GetComponent<NetworkedGameObject>().IsOwned)
                     return;
-                other.GetComponent<tankMovement> ().TakeDamage();
+                other.GetComponent<TankMovement> ().TakeDamage();
                 UnityClient.Instance.SendPacket(Packet.HitTank, other.GetComponent<NetworkedGameObject>().UID);
                 AudioManager.Instance.Play("impact");
                 break;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Networking;
 using UnityEngine;
 
-public class tankMovement : MonoBehaviour {
+public class TankMovement : MonoBehaviour {
     //Tank movement related
     [SerializeField] private float movementSpeed = 5;
     [SerializeField] private float turnSpeed = 1;

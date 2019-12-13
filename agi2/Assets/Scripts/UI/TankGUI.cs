@@ -30,6 +30,14 @@ public class TankGUI : MonoBehaviour
     public void SetResourceFraction(float fraction)
     {
         _natureMeter.fillAmount = fraction;
+        if (fraction > 0.5f)
+        {
+            _natureMeter.color = Color.Lerp(Color.yellow, Color.green, (fraction - 0.5f) * 2);
+        }
+        else
+        {
+            _natureMeter.color = Color.Lerp(Color.red, Color.yellow, fraction * 2);
+        }
     }
 
 }

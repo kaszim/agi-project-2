@@ -83,9 +83,9 @@ public class TerrainTexture : MonoBehaviour
         var modifiedTexScale = new Vector2(transform.lossyScale.x / transform.lossyScale.z, 1) * defaultTexScale;
         _rendererMaterial.SetTextureScale("_GrassTex", modifiedTexScale);
 
-        defaultTexScale = _rendererMaterial.GetTextureScale("_SandTex");
-        modifiedTexScale = new Vector2(transform.lossyScale.x / transform.lossyScale.z, 1) * defaultTexScale;
-        _rendererMaterial.SetTextureScale("_SandTex", modifiedTexScale);
+        // defaultTexScale = _rendererMaterial.GetTextureScale("_SandTex");
+        // modifiedTexScale = new Vector2(transform.lossyScale.x / transform.lossyScale.z, 1) * defaultTexScale;
+        // _rendererMaterial.SetTextureScale("_SandTex", modifiedTexScale);
 
         defaultTexScale = _rendererMaterial.GetTextureScale("_NoiseTex");
         modifiedTexScale = new Vector2(transform.lossyScale.x / transform.lossyScale.z, 1) * defaultTexScale;

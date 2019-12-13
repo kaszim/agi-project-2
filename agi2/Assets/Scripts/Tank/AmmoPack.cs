@@ -21,7 +21,7 @@ public class AmmoPack : MonoBehaviour
     {
         if(other.tag == "Player" && GetComponent<NetworkedGameObject>().IsOwned)
         {
-            var tank = other.GetComponent <tankMovement>();
+            var tank = other.GetComponent <TankMovement>();
             if (tank)
             {
                 if (tank.Reload())

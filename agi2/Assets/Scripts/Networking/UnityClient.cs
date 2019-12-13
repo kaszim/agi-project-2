@@ -96,7 +96,7 @@ namespace Networking
                 {
                     return DoNothing;
                 }
-                
+
             };
             _packetResponse[Packet.SyncVarUpdate.ToByte()] = (msg) =>
             {
@@ -133,7 +133,7 @@ namespace Networking
             {
                 var uid = msg.ReadInt64();
                 var go = _gameObjects[uid];
-                return () => go.GetComponent<tankMovement>().TakeDamage();
+                return () => go.GetComponent<TankMovement>().TakeDamage();
             };
         }
 
